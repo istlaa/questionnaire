@@ -3,6 +3,7 @@
 #include<string>
 #include<vector> 
 #include"reponse.h"
+#include <iostream>
 using namespace std;
 
 class question{
@@ -13,6 +14,7 @@ class question{
         const enum state etat() const;
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
+        virtual void ecrireQuestion(ostream& os) const = 0;
         
     protected:
         virtual std::string bonneReponse()  const = 0;
@@ -34,6 +36,7 @@ class questionTexte:public question{
         questionTexte(const std::string &titre,const std::string &bonnereponse);
         std::string reponseDonnee() const;
         bool verifierReponse(string saisie) const override;
+        void ecrireQuestion(ostream& os) const override;
     protected:
         std::string bonneReponse()  const override;
     private:
@@ -48,6 +51,7 @@ class questionChoixMultiples:public question{
         void enleverReponse(int i);
         bool verifierReponse(string saisie) const override;
         std::vector<reponse> reponses() const; 
+        void ecrireQuestion(ostream& os) const override;
     protected:
         std::string bonneReponse()  const override;
     private:
@@ -58,6 +62,7 @@ class questionNumerique : public question{
     public:
     questionNumerique(const string& titre, int reponse, int min, int max);
     bool verifierReponse(string saisie) const override ; 
+    void ecrireQuestion(ostream& os) const override;
     protected:
     string bonneReponse() const override;
     private:

@@ -3,6 +3,7 @@
 #include<vector>
 #include"question.h"
 #include<memory>
+#include <fstream>
 using namespace std;
 
 class questionnaire {
@@ -14,6 +15,7 @@ class questionnaire {
         bool estFini() const;
         int score() const;
         void changeScore(int nscore); 
+        void sauvegarder(const string& nomFichier) const;
     private:
         string d_titre;
         int d_score;

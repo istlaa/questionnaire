@@ -68,12 +68,36 @@ bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
     }
 
-bool questionChoixMultiples::verifierReponse(string saisie) const {}
+bool questionChoixMultiples::verifierReponse(string saisie) const {
+    
+}
 
 bool questionNumerique::verifierReponse(string saisie) const  {
     return (d_min<stoi(saisie)) && (stoi(saisie)< d_max) ;
 
 }
+void questionTexte::ecrireQuestion(ostream& os) const {
+    os << "T" << endl;
+    os << titre() << endl;
+    os << d_bonneReponse<< endl;
+    }
+void questionChoixMultiples::ecrireQuestion(ostream& os) const {
+    os << "Q" << endl;
+    os << titre() << endl;
+    os << d_reponses.size() << endl;
+    for(const auto &r:d_reponses)
+    {
+        os << r.nom() << endl;
+    }
+}
+void questionNumerique::ecrireQuestion(ostream& os) const {
+    os<< "N" << endl;
+    os << titre() << endl;
+    os<< d_reponse << endl;
+    os<< d_min << endl;
+    os<< d_max << endl;
+    }
+
 
 
 

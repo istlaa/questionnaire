@@ -47,3 +47,19 @@ void questionnaire::changeScore(int nscore)
 
 questionnaireSecondeChance::questionnaireSecondeChance():questionnaire{questionsFausses(),titre()} //est-ce que j'ai le droit de faire ça ???
 {}
+
+void questionnaire::sauvegarder(const string& nomFichier) const
+{
+    ofstream fichier(nomFichier);
+    if(fichier)
+    {
+        fichier << "Questionnaire: " << d_titre << "\n";
+        fichier << "Score: " << d_score << "\n\n";
+        for(const auto &q:d_questions)
+        {
+            q->ecrireQuestion(fichier);
+            fichier << "\n";
+        }
+    }
+    fichier.close();
+}

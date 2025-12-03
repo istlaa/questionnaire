@@ -58,7 +58,22 @@ std::string questionChoixMultiples::bonneReponse()  const
         i++;
     return d_reponses[i].nom();
 }
+questionNumerique::questionNumerique(const string& titre,int reponse,int min,int max) : question(titre),d_reponse{reponse},d_min{min},d_max{max}{}
 
+std::string questionNumerique::bonneReponse()   const 
+{
+    return to_string(d_reponse);
+}
+bool questionTexte::verifierReponse(string saisie) const {
+    return saisie == d_bonneReponse;
+    }
+
+bool questionChoixMultiples::verifierReponse(string saisie) const {}
+
+bool questionNumerique::verifierReponse(string saisie) const  {
+    return (d_min<stoi(saisie)) && (stoi(saisie)< d_max) ;
+
+}
 
 
 

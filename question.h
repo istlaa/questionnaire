@@ -15,10 +15,8 @@ class question{
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
         virtual void ecrireQuestion(ostream& os) const = 0;
-        
     protected:
         virtual std::string bonneReponse()  const = 0;
-        
     private:
         std::string d_titre;
         enum state d_etat;
@@ -60,15 +58,14 @@ class questionChoixMultiples:public question{
 
 class questionNumerique : public question{
     public:
-    questionNumerique(const string& titre, int reponse, int min, int max);
-    bool verifierReponse(string saisie) const override ; 
-    void ecrireQuestion(ostream& os) const override;
+        questionNumerique(const string& titre, int reponse, int min, int max);
+        bool verifierReponse(string saisie) const override ; 
+        void ecrireQuestion(ostream& os) const override;
     protected:
-    string bonneReponse() const override;
+        string bonneReponse() const override;
     private:
-    int d_reponse;
-    int d_min;
-    int d_max;
-
+        int d_reponse;
+        int d_min;
+        int d_max;
 };
 #endif

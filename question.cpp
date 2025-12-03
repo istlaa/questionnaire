@@ -66,10 +66,14 @@ std::string questionNumerique::bonneReponse()   const
 }
 bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
-    }
+}
 
-bool questionChoixMultiples::verifierReponse(string saisie) const {
-    
+bool questionChoixMultiples::verifierReponse(string saisie) const 
+{
+    int i = 0;
+    while(i < d_reponses.size() && d_reponses[i].estJuste() && d_reponses[i].estSelectionne())
+        i++;
+    return i == d_reponses.size();
 }
 
 bool questionNumerique::verifierReponse(string saisie) const  {

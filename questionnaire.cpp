@@ -63,3 +63,17 @@ void questionnaire::sauvegarder(const string& nomFichier) const
     }
     fichier.close();
 }
+
+void questionnaire::ajouteQuestion(const question &q)
+{
+    d_questions.push_back(*q);
+}
+
+questionnaireTest::questionnaireTest(const vector<question> &questions, const string &titre):questionnaire{questions,titre}
+{}
+
+void questionnaireTest::chargement(const string &nomFichierTexte,const string &nomFichierNumerique,const string &nomFichierQCM)
+{
+    
+}
+

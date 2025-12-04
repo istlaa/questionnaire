@@ -122,7 +122,7 @@ void questionnaireTest::chargement(const string &nomFichier)
             getline(fichier,limitemax);
             res = stoi(reponseprecise);
             min = stoi(limitemin);
-            min = stoi(limitemax);
+            max = stoi(limitemax);
             ajouteQuestion(questionNumerique{questions,res,min,max});
             getline(fichier,questionSuivante);
             questions = questionSuivante;
@@ -148,4 +148,5 @@ void questionnaireTest::chargement(const string &nomFichier)
         }
     }
 }
+
 

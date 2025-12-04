@@ -93,7 +93,7 @@ void questionnaire::ajouteQuestion(const question &q)
 *****************************************************************************************************
 */
 
-void questionnaireTest::chargement(const string &nomFichier)
+void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
     if(!fichier.end())
@@ -148,5 +148,6 @@ void questionnaireTest::chargement(const string &nomFichier)
         }
     }
 }
+
 
 

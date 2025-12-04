@@ -80,9 +80,9 @@ void questionnaire::sauvegarder(const string& nomFichier) const
     fichier.close();
 }
 
-void questionnaire::ajouteQuestion(const question &q)
+void questionnaire::ajouteQuestion(const unique_ptr<question> &q)
 {
-    d_questions.push_back(*q);
+    d_questions.push_back(move(q));
 }
 
 /*
@@ -96,7 +96,7 @@ void questionnaire::ajouteQuestion(const question &q)
 void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
-    if(!fichier.end())
+    if(!fichier.eof())
     {
         //écriture des questions textes
         string questions = "";
@@ -106,7 +106,7 @@ void questionnaire::chargement(const string &nomFichier)
         {
             string reponse;
             getline(fichier,reponse);
-            ajouteQuestion(questionTexte{questions,reponse});
+            ajouteQuestion(make_unique<questionTexte>(questions,reponse));
             getline(fichier,questionSuivante);
             questions = questionSuivante;
         }
@@ -123,7 +123,7 @@ void questionnaire::chargement(const string &nomFichier)
             res = stoi(reponseprecise);
             min = stoi(limitemin);
             max = stoi(limitemax);
-            ajouteQuestion(questionNumerique{questions,res,min,max});
+            ajouteQuestion(make_unique<questionNumerique>(questions,res,min,max));
             getline(fichier,questionSuivante);
             questions = questionSuivante;
         }
@@ -139,9 +139,9 @@ void questionnaire::chargement(const string &nomFichier)
                 string bonne_reponse;
                 getline(fichier,res_title);
                 getline(fichier,bonne_reponse);
-                reponses.pushback(reponse{res_title,bonne_reponse =="true"});
+                reponses.push_back(reponse{res_title,bonne_reponse =="true"});
             }
-            ajouteQuestion(questionChoixMultiples{questions,reponses});
+            ajouteQuestion(make_unique<questionChoixMultiples>(questions,reponses));
             getline(fichier,questionSuivante);
             questions = questionSuivante;
         }

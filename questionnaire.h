@@ -19,7 +19,7 @@ class questionnaire {
         void sauvegarder(const string& nomFichier) const;
         virtual void chargement(const string& nomFichier);
     private:
-        void ajouteQuestion(const unique_ptr<question> &q);
+        void ajouteQuestion(const unique_ptr<question> q);
         vector<unique_ptr<question>>d_questions;
         int d_score;
         string d_titre;

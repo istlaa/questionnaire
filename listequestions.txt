@@ -1,0 +1,190 @@
+Qui a peint la Joconde ? 
+Leonard De Vinci
+Qui a écrit Les Misérables ? 
+Victor Hugo
+Quel est l’élément chimique dont le symbole est O ? 
+Oxygène
+Qui a fondé l’Empire mongol ? 
+Gengis Khan
+Quel pays a inventé les Jeux Olympiques moderne ? 
+France
+Qui a développé la théorie de la relativité ?
+Albert Einstein
+Quel est l’auteur de Roméo et Juliette ?
+Shakespear
+T
+En quelle année Christophe Colomb découvre l’Amérique ?  
+1492
+1489
+1495
+Combien de pays composent l’Union Européenne (actuellement) ?  
+27
+20
+34
+Combien de côtés a un hexagone ?  
+6
+5
+7
+En quelle année l’homme a marché sur la Lune pour la première fois ?  
+1969
+1964
+1974
+Combien de joueurs titulaires dans une équipe de foot sur le terrain ?  
+11
+9
+13
+Combien de jours compte une année bissextile ?  
+366
+364
+368
+Combien d’états composent les États-Unis ?  
+50
+48
+52
+Combien de dents a un adulte normalement ?  
+32
+27
+37
+En quelle année a eu lieu la Révolution française ?  
+1789
+1782
+1796
+Combien y a-t-il de zéros dans un million ?  
+6
+5
+7
+Combien de couleurs sur le drapeau de la France ?  
+3
+2
+4
+En quelle année la Tour Eiffel a été inaugurée ?  
+1889
+1879
+1899
+Combien de secondes dans une minute ?  
+60
+55
+65
+Combien de continents sur Terre ?  
+7
+5
+8
+Combien de tomes dans Harry Potter ?  
+7
+6
+9
+Combien de tentacules possède une pieuvre ?  
+8
+6
+10
+Quelle est la température d’ébullition de l’eau au niveau de la mer ? (°C)  
+100
+90
+105
+Combien de planètes dans le système solaire ?  
+8
+7
+9
+En quelle année a eu lieu la première guerre mondiale ?
+1914
+1910
+1918
+Combien de lettres dans l’alphabet français ?  
+26
+24
+28
+T
+Quelle est la planète la plus proche du Soleil ?
+Terre
+false
+Vénus
+false
+Mercure
+true
+Mars
+false
+Quelle est la capitale du Japon ?
+Séoul
+false
+Pékin
+false
+Tokyo
+true
+Osaka
+false
+Combien de jours compte une année non bissextile ?
+360
+false
+365
+true
+366
+false
+364
+false
+Qui a peint "Guernica" ?
+Salvador Dalí
+false
+Picasso
+true
+Monet
+false
+Van Gogh
+false
+Quel est le plus long fleuve du monde ?
+Amazone
+true
+Nil
+false
+Yangtsé
+false
+Mississippi
+false
+Quelle est la formule chimique de l’eau ?
+CO2
+false
+H2O
+true
+O2
+false
+H2
+false
+Dans quel pays se trouve le mont Everest ?
+Inde
+false
+Chine/Tibet
+false
+Népal
+true
+Japon
+false
+Quelle est la langue la plus parlée au monde ?
+Anglais
+true
+Espagnol
+false
+Mandarin
+false
+Hindi
+false
+Combien de joueurs sur le terrain dans une équipe de basket ?
+4
+false
+5
+true
+6
+false
+7
+false
+Quelle mer borde la France au sud ?
+Mer Noire
+false
+Mer Baltique
+false
+Mer Méditerranée
+true
+Mer Rouge
+false
+
+
+
+

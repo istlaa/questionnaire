@@ -18,7 +18,7 @@ public:
 protected:
 
     std::vector<std::unique_ptr<question>> d_questions;
-    size_t d_indiceCourant = 0;
+    std::size_t d_indiceCourant = 0;
 };
 
 #endif

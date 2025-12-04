@@ -9,7 +9,7 @@ using namespace std;
 class questionnaire {
     public:
         virtual ~questionnaire() =default;
-        questionnaire(const vector<unique_ptr<question>>&questions,const string &titre);
+        questionnaire(const string &titre);
         vector<unique_ptr<question>> questionsFausses() const;
         int nbQuestionsRepondus()   const;
         string titre()  const;
@@ -17,25 +17,17 @@ class questionnaire {
         int score() const;
         void changeScore(int nscore); 
         void sauvegarder(const string& nomFichier) const;
-        virtual void chargement(const string& nomFichierTexte,const string &nomFichierNumerique,const &nomFichierQCM) =0;
+        virtual void chargement(const string& nomFichier);
     private:
         void ajouteQuestion(const question &q);
-
+        vector<unique_ptr<question>>d_questions;
+        int d_score;
+        string d_titre;
 };
 
-const int nombreQuestionsTest = 12;
-const int nombreQuestionsAdaptative = 6;
 
-class questionnaireSecondeChance:public questionnaire{
-    public:
-        questionnaireSecondeChance();
-};
 
-class questionnaireTest:public questionnaire{
-    public:
-        questionnaireTest(const vector<unique_ptr<question>> &questions,const string &titre);
-        void chargement(const string &nomFichierTexte,const string &nomFichierNumerique,const string &nomFichierQCM)   override;
-};
+
 
 
 

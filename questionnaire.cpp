@@ -80,7 +80,7 @@ void questionnaire::sauvegarder(const string& nomFichier) const
     fichier.close();
 }
 
-void questionnaire::ajouteQuestion(const unique_ptr<question> q)
+void questionnaire::ajouteQuestion(unique_ptr<question> q)
 {
     d_questions.push_back(move(q));
 }
@@ -147,6 +147,7 @@ void questionnaire::chargement(const string &nomFichier)
         }
     }
 }
+
 
 
 

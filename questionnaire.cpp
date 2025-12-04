@@ -132,15 +132,14 @@ void questionnaire::chargement(const string &nomFichier)
         //écriture des questions QCM
         while(questions != "T")
         {
-            vector<reponse> responses{};
-            bool bres1,
+            vector<reponse> reponses{};
             for(int i = 0;i < 4;i++)
             {
                 string res_title;
                 string bonne_reponse;
                 getline(fichier,res_title);
                 getline(fichier,bonne_reponse);
-                responses.pushback(reponse{res_title,bonne_reponse =="true"});
+                reponses.pushback(reponse{res_title,bonne_reponse =="true"});
             }
             ajouteQuestion(questionChoixMultiples{questions,reponses});
             getline(fichier,questionSuivante);
@@ -148,6 +147,7 @@ void questionnaire::chargement(const string &nomFichier)
         }
     }
 }
+
 
 
 

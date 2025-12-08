@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1765203032 source:c:\users\genis\desktop\cours\projet\questionnaire\reponse.cpp
+	"reponse.h"
+
+1765203032 c:\users\genis\desktop\cours\projet\questionnaire\reponse.h
+	<string>
+
+1765204009 source:c:\users\genis\desktop\cours\projet\questionnaire\main.cpp
+	<iostream>
+	"menu.h"
+
+1765204038 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
+

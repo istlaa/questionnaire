@@ -1,11 +1,14 @@
 #include <iostream>
 #include "menu.h"
 
+
 using namespace std;
 
 int main()
 {
-    menu m;
-    m.execute();
+
+    afficheurTerminal a{};
+    menu m{a};
+    m.executionProgramme();
     return 0;
 }

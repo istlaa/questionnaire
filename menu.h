@@ -1,22 +1,27 @@
 #ifndef MENU_H
 #define MENU_H
 #include "questionnaire.h"
+#include "afficheur.h"
+#include "afficheurTerminal.h"
 
-using std::unique_ptr;
 
-class questionnaire;
+using std::string;
+
+class afficheur;
 
 class menu {
 public:
-    menu();
+    menu(afficheur& affiche);
 
-    // Boucle principale du programme
-    void execute();
+    void executionProgramme();
 
     // Affichages
-    void afficherMenuPrincipal();
-    void afficherMenuEvaluation();
-    std::string afficherChargerQuestionnaire() const;
+    int lancerMenuDepart();
+    int lancerMenuPrincipal();
+    int afficherMenuEvaluation();
+    string recupererNomFichier() const;
+    void choixInvalide();
+    void choixQuitter();
 
     void chargerQuestionnaire();
     void lancerApprentissage();
@@ -27,7 +32,7 @@ public:
 
 
 private:
-    questionnaire d_questionnaire; // questionnaire
+    afficheur& d_afficheur;
     bool d_questionnaireCharge;
 
 };

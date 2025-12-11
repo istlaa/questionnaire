@@ -97,6 +97,7 @@ void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
     if(!fichier.eof())
+
     {
         //écriture des questions textes
         string questions = "";

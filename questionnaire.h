@@ -8,6 +8,7 @@ using namespace std;
 
 class questionnaire {
     public:
+        questionnaire();
         questionnaire(const string &titre);
         vector<question*> questionsFausses() const;
         int nbQuestionsRepondus()   const;

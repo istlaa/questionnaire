@@ -4,42 +4,47 @@
 
 using std::cout;
 using std::cin;
-using std::string;
 
-menu::menu(): d_questionnaireCharge{false} {}
+menu::menu(afficheur& affiche): d_afficheur{affiche}, d_questionnaireCharge{false} {}
 
 
 bool menu::questionnaireEstCharge() const {
     return d_questionnaireCharge;
 }
 
-void menu::execute() {
-    int choix = 0;
+void menu::choixInvalide()
+{
+   d_afficheur.affiche("\nChoix invalide.\n");
+}
+void menu::choixQuitter()
+{
+    d_afficheur.affiche("\nAu revoir.\n");
+}
 
+void menu::executionProgramme() {
+
+int choix;
     //Premier choix
-    while (!questionnaireEstCharge()) {
-        cout << "\n===== MENU PRINCIPAL =====\n";
-        cout << "1. Charger un questionnaire\n";
-        cout << "2. Quitter\n";
-        cout << "Votre choix : ";
-        cin >> choix;
+    do {
+
+        choix = lancerMenuDepart();
 
         switch (choix) {
         case 1:
             chargerQuestionnaire();
             break;
         case 2:
-            cout << "\nAu revoir.\n";
+            choixQuitter();
             return;
         default:
-            cout << "\nChoix invalide.\n";
+            choixInvalide();
             break;
         }
-    }
+    }while (!questionnaireEstCharge());
 
     do {
-        afficherMenuPrincipal();
-        cin >> choix;
+
+        choix = lancerMenuPrincipal();
 
         switch (choix) {
         case 1:
@@ -49,44 +54,54 @@ void menu::execute() {
             lancerEvaluation();
             break;
         case 3:
-            cout << "\nAu revoir !\n";
+            choixQuitter();
             break;
         default:
-            cout << "\nChoix invalide.\n";
+            choixInvalide();
             break;
         }
 
     } while (choix != 3);
 }
 
-
-void menu::afficherMenuPrincipal() {
-    cout << "\n===== MENU PRINCIPAL =====\n";
-    cout << "1. Mode apprentissage\n";
-    cout << "2. Mode evaluation\n";
-    cout << "3. Quitter\n";
-    cout << "Votre choix : ";
+int menu::lancerMenuDepart()
+{
+        d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
+        d_afficheur.affiche("1. Charger un questionnaire\n");
+        d_afficheur.affiche("2. Quitter\n");
+        d_afficheur.affiche("Votre choix : ");
+        int choix = d_afficheur.demanderInt();
+        return choix;
 }
 
-string menu::afficherChargerQuestionnaire() const
+int menu::lancerMenuPrincipal() {
+    d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
+    d_afficheur.affiche("1. Mode apprentissage\n");
+    d_afficheur.affiche("2. Mode evaluation\n");
+    d_afficheur.affiche("3. Quitter\n");
+    d_afficheur.affiche("Votre choix : ");
+    int choix = d_afficheur.demanderInt();
+        return choix;
+}
+
+string menu::recupererNomFichier() const
 {
-    string nomFichier {""};
-    do
-    {
-        cout << "Nom du fichier : ";
-        cin >> nomFichier;
-    }while(nomFichier == "");
+    string nomFichier;
+    d_afficheur.affiche("Nom du fichier : ");
+    nomFichier = d_afficheur.demanderString();
+    cout << " -" <<nomFichier<<"-";
+
 
     return nomFichier;
 }
 
 void menu::chargerQuestionnaire()
 {
-    string fichier = afficherChargerQuestionnaire();
+    string fichier = recupererNomFichier();
     questionnaire q {"test"};
     q.chargement(fichier);
 
-    d_questionnaire = q;
+    d_questionnaireCharge = true;
 }
 
 

@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
+#include "questionnaire.h"
 
+using std::unique_ptr;
 
 class questionnaire;
 
@@ -14,18 +16,19 @@ public:
     // Affichages
     void afficherMenuPrincipal();
     void afficherMenuEvaluation();
+    std::string afficherChargerQuestionnaire() const;
 
-    // Actions
     void chargerQuestionnaire();
     void lancerApprentissage();
     void lancerEvaluation();
 
     // Savoir si un questionnaire est chargé
-    bool questionnaireCharge() const;
+    bool questionnaireEstCharge() const;
 
 
 private:
-    questionnaire* d_questionnaire; // pointeur vers le questionnaire chargé
+    questionnaire d_questionnaire; // questionnaire
+    bool d_questionnaireCharge;
 
 };
 

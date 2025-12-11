@@ -12,18 +12,18 @@ std::string question::titre()   const
 questionTexte::questionTexte(const std::string &titre,const std::string &bonnereponse):question{titre},d_bonneReponse{bonnereponse}
 {}
 
-std::string questionTexte::bonneReponse()   const 
+std::string questionTexte::bonneReponse()   const
 {
     return d_bonneReponse;
 }
 
-void question::changeEtat(const enum state &nouvelEtat)    
+void question::changeEtat(const enum state &nouvelEtat)
 {
     if(d_etat != nouvelEtat)
         d_etat = nouvelEtat;
 }
 
-const enum state question::etat()  const 
+enum state question::etat()  const
 {
     return d_etat;
 }
@@ -44,7 +44,7 @@ void questionChoixMultiples::selectionReponse(int i)
 std::vector<reponse> questionChoixMultiples::reponses() const
 {
     return d_reponses;
-} 
+}
 
 void questionChoixMultiples::enleverReponse(int i)
 {
@@ -60,7 +60,7 @@ std::string questionChoixMultiples::bonneReponse()  const
 }
 questionNumerique::questionNumerique(const string& titre,int reponse,int min,int max) : question(titre),d_reponse{reponse},d_min{min},d_max{max}{}
 
-std::string questionNumerique::bonneReponse()   const 
+std::string questionNumerique::bonneReponse()   const
 {
     return to_string(d_reponse);
 }
@@ -68,7 +68,7 @@ bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
 }
 
-bool questionChoixMultiples::verifierReponse(string saisie) const 
+bool questionChoixMultiples::verifierReponse(string saisie) const
 {
     int i = 0;
     while(i < d_reponses.size() && d_reponses[i].estJuste() && d_reponses[i].estSelectionne())

@@ -8,7 +8,7 @@
 *****************************************************************************************************
 */
 
-questionnaire::questionnaire(const string &titre):d_questions{{}},d_score{0},d_titre{titre}
+questionnaire::questionnaire(const string &titre):d_score{0},d_titre{titre}
 {}
 
 
@@ -21,13 +21,13 @@ questionnaire::questionnaire(const string &titre):d_questions{{}},d_score{0},d_t
 *****************************************************************************************************
 */
 
-vector<unique_ptr<question>> questionnaire::questionsFausses()  const
+vector<question*> questionnaire::questionsFausses()  const
 {
-    vector<unique_ptr<question>> qFausses{};
+    vector<question*> qFausses{};
     for(const auto &q:d_questions)
     {
         if(q->etat() == REPONDUFAUX)
-            qFausses.push_back(move(q));
+            qFausses.push_back(q.get());
     }
     return qFausses;
 }

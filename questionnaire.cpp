@@ -1,5 +1,6 @@
 #include"questionnaire.h"
-
+#include<vector>
+#include<fstream>
 /*
 *****************************************************************************************************
 *****************************************************************************************************
@@ -93,60 +94,52 @@ void questionnaire::ajouteQuestion(unique_ptr<question> q)
 *****************************************************************************************************
 */
 
+
 void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
-    if(!fichier.eof())
-
+    
+    if(fichier.good())
     {
-        //écriture des questions textes
-        string questions = "";
-        string questionSuivante = "";
-        getline(fichier,questions);
-        while(questions != "T")
+        string type;    
+        string question;
+        while(getline(fichier, type))
         {
-            string reponse;
-            getline(fichier,reponse);
-            ajouteQuestion(make_unique<questionTexte>(questions,reponse));
-            getline(fichier,questionSuivante);
-            questions = questionSuivante;
-        }
-        getline(fichier,questions);
-
-        //écriture questions numériques
-        int res,min,max;
-        while(questions != "T")
-        {
-            string reponseprecise,limitemin,limitemax;
-            getline(fichier,reponseprecise);
-            getline(fichier,limitemin);
-            getline(fichier,limitemax);
-            res = stoi(reponseprecise);
-            min = stoi(limitemin);
-            max = stoi(limitemax);
-            ajouteQuestion(make_unique<questionNumerique>(questions,res,min,max));
-            getline(fichier,questionSuivante);
-            questions = questionSuivante;
-        }
-        getline(fichier,questions);
-
-        //écriture des questions QCM
-        while(questions != "T")
-        {
-            vector<reponse> reponses{};
-            for(int i = 0;i < 4;i++)
+            getline(fichier, question);
+            if(type == "TEXTE")
             {
-                string res_title;
-                string bonne_reponse;
-                getline(fichier,res_title);
-                getline(fichier,bonne_reponse);
-                reponses.push_back(reponse{res_title,bonne_reponse =="true"});
+                string reponse;
+                getline(fichier, reponse);
+                ajouteQuestion(make_unique<questionTexte>(question, reponse));
             }
-            ajouteQuestion(make_unique<questionChoixMultiples>(questions,reponses));
-            getline(fichier,questionSuivante);
-            questions = questionSuivante;
+            else if(type == "NUMERIQUE")
+            {
+                string reponseStr, minStr, maxStr;
+                getline(fichier, reponseStr);
+                getline(fichier, minStr);
+                getline(fichier, maxStr);
+                int reponse = stoi(reponseStr);
+                int min = stoi(minStr);
+                int max = stoi(maxStr);
+                ajouteQuestion(make_unique<questionNumerique>(question, reponse, min, max));
+            }
+            else if(type == "QCM")
+            {
+                vector<reponse> reponses;
+                for(int i = 0; i < 4; ++i)
+                {
+                    string res_title;
+                    string bonne_reponse;
+                    getline(fichier, res_title);
+                    getline(fichier, bonne_reponse);
+                    reponses.push_back(reponse{res_title, bonne_reponse == "true"});
+                }
+                ajouteQuestion(make_unique<questionChoixMultiples>(question, reponses));
+            }    
         }
+        fichier.close();
     }
+
 }
 
 

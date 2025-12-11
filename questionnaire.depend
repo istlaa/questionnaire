@@ -11,3 +11,40 @@
 
 1765204038 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
 
+1765437538 source:u:\bureau\projet\questionnaire\reponse.cpp
+	"reponse.h"
+
+1765437538 u:\bureau\projet\questionnaire\reponse.h
+	<string>
+
+1765437538 source:u:\bureau\projet\questionnaire\main.cpp
+	<iostream>
+	"menu.h"
+
+1765440844 u:\bureau\projet\questionnaire\menu.h
+	"questionnaire.h"
+
+1765439457 u:\bureau\projet\questionnaire\questionnaire.h
+	<vector>
+	"question.h"
+	<memory>
+	<fstream>
+
+1765438602 u:\bureau\projet\questionnaire\question.h
+	<string>
+	<vector>
+	"reponse.h"
+	<iostream>
+
+1765440342 source:u:\bureau\projet\questionnaire\menu.cpp
+	"menu.h"
+	<iostream>
+	"questionnaire.h"
+
+1765438606 source:u:\bureau\projet\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1765440481 source:u:\bureau\projet\questionnaire\questionnaire.cpp
+	"questionnaire.h"
+

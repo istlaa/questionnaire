@@ -1,17 +1,22 @@
 #ifndef QUESTION_H
 #define QUESTION_H
 #include<string>
-#include<vector> 
+#include<vector>
 #include"reponse.h"
 #include <iostream>
-using namespace std;
 
+using namespace std;
+enum state {
+    NONREPONDU = 0,
+    REPONDUJUSTE = 1,
+    REPONDUFAUX = 2
+};
 class question{
     public:
         virtual ~question() =default;
         question(const std::string &titre);
         std::string titre() const;
-        const enum state etat() const;
+        enum state etat() const;
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
         virtual void ecrireQuestion(ostream& os) const = 0;
@@ -23,11 +28,7 @@ class question{
 };
 
 
-const enum state {  
-    NONREPONDU = 0,
-    REPONDUJUSTE = 1,
-    REPONDUFAUX = 2
-};
+
 
 class questionTexte:public question{
     public:
@@ -48,7 +49,7 @@ class questionChoixMultiples:public question{
         void selectionReponse(int i);
         void enleverReponse(int i);
         bool verifierReponse(string saisie) const override;
-        std::vector<reponse> reponses() const; 
+        std::vector<reponse> reponses() const;
         void ecrireQuestion(ostream& os) const override;
     protected:
         std::string bonneReponse()  const override;
@@ -59,7 +60,7 @@ class questionChoixMultiples:public question{
 class questionNumerique : public question{
     public:
         questionNumerique(const string& titre, int reponse, int min, int max);
-        bool verifierReponse(string saisie) const override ; 
+        bool verifierReponse(string saisie) const override ;
         void ecrireQuestion(ostream& os) const override;
     protected:
         string bonneReponse() const override;

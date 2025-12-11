@@ -9,12 +9,12 @@ using namespace std;
 class questionnaire {
     public:
         questionnaire(const string &titre);
-        vector<unique_ptr<question>> questionsFausses() const;
+        vector<question*> questionsFausses() const;
         int nbQuestionsRepondus()   const;
         string titre()  const;
         bool estFini() const;
         int score() const;
-        void changeScore(int nscore); 
+        void changeScore(int nscore);
         void sauvegarder(const string& nomFichier) const;
         void chargement(const string& nomFichier);
     private:

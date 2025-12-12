@@ -102,16 +102,9 @@ void menu::chargerQuestionnaire()
 {
     string fichier = recupererNomFichier();
     questionnaire q {"test"};
-try {
-    q.chargement(fichier);
-    d_questionnaireCharge = true;
-}
-catch(const std::exception& e) {
-    d_afficheur.affiche(string("Erreur : ") + e.what() + "\n");
-}
 
 
-
+    d_questionnaireCharge = q.chargement(fichier);
 
 
 }

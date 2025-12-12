@@ -5,11 +5,11 @@
 1765203032 c:\users\genis\desktop\cours\projet\questionnaire\reponse.h
 	<string>
 
-1765450410 source:c:\users\genis\desktop\cours\projet\questionnaire\main.cpp
+1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\main.cpp
 	<iostream>
 	"menu.h"
 
-1765462328 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
+1765531297 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
 	"questionnaire.h"
 	"afficheur.h"
 	"afficheurTerminal.h"
@@ -51,37 +51,39 @@
 1765440481 source:u:\bureau\projet\questionnaire\questionnaire.cpp
 	"questionnaire.h"
 
-1765442431 c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.h
+1765537405 c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.h
 	<vector>
 	"question.h"
 	<memory>
 	<fstream>
 
-1765442174 c:\users\genis\desktop\cours\projet\questionnaire\question.h
+1765531297 c:\users\genis\desktop\cours\projet\questionnaire\question.h
 	<string>
 	<vector>
 	"reponse.h"
 	<iostream>
 
-1765442174 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
+1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
 	"question.h"
 	<vector>
 
-1765460969 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
+1765537430 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
 	"questionnaire.h"
+	<vector>
+	<fstream>
 
-1765461008 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
+1765537425 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
 	"menu.h"
 	<iostream>
 	"questionnaire.h"
 
-1765461871 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
+1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
 	"afficheurTerminal.h"
 
-1765458188 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
+1765531297 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
 	"afficheur.h"
 
-1765458191 c:\users\genis\desktop\cours\projet\questionnaire\afficheur.h
+1765531297 c:\users\genis\desktop\cours\projet\questionnaire\afficheur.h
 	<string>
 	<iostream>
 

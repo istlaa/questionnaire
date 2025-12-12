@@ -17,7 +17,7 @@ class questionnaire {
         int score() const;
         void changeScore(int nscore);
         void sauvegarder(const string& nomFichier) const;
-        void chargement(const string& nomFichier);
+        bool chargement(const string& nomFichier);
     private:
         void ajouteQuestion(unique_ptr<question> q);
         vector<unique_ptr<question>>d_questions;

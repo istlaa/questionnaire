@@ -94,13 +94,13 @@ void questionnaire::ajouteQuestion(unique_ptr<question> q)
 */
 
 
-void questionnaire::chargement(const string &nomFichier)
+bool questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
-    
+
     if(!fichier.good())
-        return;
-    string type;    
+        return false;
+    string type;
     string question;
     while(getline(fichier, type))
     {
@@ -134,12 +134,13 @@ void questionnaire::chargement(const string &nomFichier)
                     reponses.push_back(reponse{res_title, bonne_reponse == "true"});
                 }
                 ajouteQuestion(make_unique<questionChoixMultiples>(question, reponses));
-            }    
+            }
         }
+        return true;
         fichier.close();
     }
 
-}
+
 
 
 

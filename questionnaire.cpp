@@ -99,13 +99,15 @@ void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
     
-    if(fichier.good())
+    if(!fichier.good())
     {
-        string type;    
-        string question;
-        while(getline(fichier, type))
-        {
-            getline(fichier, question);
+        return;
+    }
+    string type;    
+    string question;
+    while(getline(fichier, type))
+    {
+        getline(fichier, question);
             if(type == "TEXTE")
             {
                 string reponse;
@@ -138,9 +140,10 @@ void questionnaire::chargement(const string &nomFichier)
             }    
         }
         fichier.close();
-    }
+    
 
 }
+
 
 
 

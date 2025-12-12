@@ -96,9 +96,9 @@ void questionnaire::ajouteQuestion(unique_ptr<question> q)
 void questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
-    if(!fichier.eof())
+    if(!fichier)throw std::runtime_error("Impossible d'ouvrir le fichier : " + nomFichier);
 
-    {
+
         //écriture des questions textes
         string questions = "";
         string questionSuivante = "";
@@ -146,7 +146,7 @@ void questionnaire::chargement(const string &nomFichier)
             getline(fichier,questionSuivante);
             questions = questionSuivante;
         }
-    }
+
 }
 
 

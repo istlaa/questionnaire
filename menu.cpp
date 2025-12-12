@@ -4,6 +4,7 @@
 
 using std::cout;
 using std::cin;
+using std::to_string;
 
 menu::menu(afficheur& affiche): d_afficheur{affiche}, d_questionnaireCharge{false} {}
 
@@ -30,10 +31,10 @@ int choix;
         choix = lancerMenuDepart();
 
         switch (choix) {
-        case 1:
+        case PREMIER:
             chargerQuestionnaire();
             break;
-        case 2:
+        case DEUXIEME:
             choixQuitter();
             return;
         default:
@@ -47,13 +48,13 @@ int choix;
         choix = lancerMenuPrincipal();
 
         switch (choix) {
-        case 1:
+        case PREMIER:
             lancerApprentissage();
             break;
-        case 2:
+        case DEUXIEME:
             lancerEvaluation();
             break;
-        case 3:
+        case TROISIEME:
             choixQuitter();
             break;
         default:
@@ -61,24 +62,28 @@ int choix;
             break;
         }
 
-    } while (choix != 3);
+    } while (choix != TROISIEME);
+}
+void menu::afficherEnTete()
+{
+    d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
 }
 
 int menu::lancerMenuDepart()
 {
-        d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
-        d_afficheur.affiche("1. Charger un questionnaire\n");
-        d_afficheur.affiche("2. Quitter\n");
+        afficherEnTete();
+        d_afficheur.affiche(to_string(PREMIER)+". Charger un questionnaire\n");
+        d_afficheur.affiche(to_string(DEUXIEME)+". Quitter\n");
         d_afficheur.affiche("Votre choix : ");
         int choix = d_afficheur.demanderInt();
         return choix;
 }
 
 int menu::lancerMenuPrincipal() {
-    d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
-    d_afficheur.affiche("1. Mode apprentissage\n");
-    d_afficheur.affiche("2. Mode evaluation\n");
-    d_afficheur.affiche("3. Quitter\n");
+    afficherEnTete();
+    d_afficheur.affiche(to_string(PREMIER)+". Mode apprentissage\n");
+    d_afficheur.affiche(to_string(DEUXIEME)+". Mode evaluation\n");
+    d_afficheur.affiche(to_string(TROISIEME)+". Quitter\n");
     d_afficheur.affiche("Votre choix : ");
     int choix = d_afficheur.demanderInt();
         return choix;
@@ -89,8 +94,6 @@ string menu::recupererNomFichier() const
     string nomFichier;
     d_afficheur.affiche("Nom du fichier : ");
     nomFichier = d_afficheur.demanderString();
-    cout << " -" <<nomFichier<<"-";
-
 
     return nomFichier;
 }
@@ -99,9 +102,18 @@ void menu::chargerQuestionnaire()
 {
     string fichier = recupererNomFichier();
     questionnaire q {"test"};
+try {
     q.chargement(fichier);
-
     d_questionnaireCharge = true;
+}
+catch(const std::exception& e) {
+    d_afficheur.affiche(string("Erreur : ") + e.what() + "\n");
+}
+
+
+
+
+
 }
 
 

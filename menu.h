@@ -19,7 +19,7 @@ public:
     int lancerMenuDepart();
     int lancerMenuPrincipal();
     int afficherMenuEvaluation();
-    string recupererNomFichier() const;
+    void afficherEnTete();
     void choixInvalide();
     void choixQuitter();
 
@@ -27,13 +27,17 @@ public:
     void lancerApprentissage();
     void lancerEvaluation();
 
-    // Savoir si un questionnaire est chargé
+    string recupererNomFichier()const;
     bool questionnaireEstCharge() const;
 
 
 private:
     afficheur& d_afficheur;
     bool d_questionnaireCharge;
+    static constexpr int PREMIER {1};
+    static constexpr int DEUXIEME {2};
+    static constexpr int TROISIEME {3};
+
 
 };
 

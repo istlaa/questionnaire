@@ -1,0 +1,57 @@
+Qui a peint la Joconde ?
+Leonard de Vinci
+Quelle est la capitale de l'Italie ?
+Rome
+Quel gaz respirons-nous majoritairement ?
+Diazote
+T
+Combien font 5 + 7 ?
+12
+0
+100
+Quelle est la température d'ébullition de l'eau en °C ?
+100
+0
+200
+Combien y a-t-il de jours dans une année non bissextile ?
+365
+300
+400
+T
+Quel est le plus grand océan du monde ?
+Pacifique
+true
+Atlantique
+false
+Indien
+false
+Arctique
+false
+Quelle planète est surnommée la planète rouge ?
+Mars
+true
+Vénus
+false
+Terre
+false
+Mercure
+false
+Qui a écrit "Le Petit Prince" ?
+Antoine de Saint-Exupéry
+true
+Victor Hugo
+false
+Molière
+false
+Jules Verne
+false
+Quel est le plus long fleuve du monde ?
+Amazone
+true
+Nil
+false
+Yangtsé
+false
+Mississippi
+false
+T

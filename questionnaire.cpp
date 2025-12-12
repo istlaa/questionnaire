@@ -100,9 +100,7 @@ void questionnaire::chargement(const string &nomFichier)
     ifstream fichier(nomFichier);
     
     if(!fichier.good())
-    {
         return;
-    }
     string type;    
     string question;
     while(getline(fichier, type))
@@ -140,7 +138,7 @@ void questionnaire::chargement(const string &nomFichier)
             }    
         }
         fichier.close();
-    
+    }
 
 }
 

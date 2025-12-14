@@ -26,47 +26,4 @@ class question{
         std::string d_titre;
         enum state d_etat;
 };
-
-
-
-
-class questionTexte:public question{
-    public:
-        questionTexte(const std::string &titre,const std::string &bonnereponse);
-        std::string reponseDonnee() const;
-        bool verifierReponse(string saisie) const override;
-        void ecrireQuestion(ostream& os) const override;
-    protected:
-        std::string bonneReponse()  const override;
-    private:
-        std::string d_bonneReponse;
-        std::string d_reponse;
-};
-
-class questionChoixMultiples:public question{
-    public:
-        questionChoixMultiples(const std::string &titre,const std::vector<reponse>&reponses);
-        void selectionReponse(int i);
-        void enleverReponse(int i);
-        bool verifierReponse(string saisie) const override;
-        std::vector<reponse> reponses() const;
-        void ecrireQuestion(ostream& os) const override;
-    protected:
-        std::string bonneReponse()  const override;
-    private:
-        std::vector<reponse> d_reponses;
-};
-
-class questionNumerique : public question{
-    public:
-        questionNumerique(const string& titre, int reponse, int min, int max);
-        bool verifierReponse(string saisie) const override ;
-        void ecrireQuestion(ostream& os) const override;
-    protected:
-        string bonneReponse() const override;
-    private:
-        int d_reponse;
-        int d_min;
-        int d_max;
-};
 #endif

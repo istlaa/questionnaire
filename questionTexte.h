@@ -1,0 +1,19 @@
+#ifndef QUESTIONTEXTE_H
+#define QUESTIONTEXTE_H
+
+#include <string>
+#include "question.h"
+
+class questionTexte:public question{
+    public:
+        questionTexte(const std::string &titre,const std::string &bonnereponse);
+        std::string reponseDonnee() const;
+        bool verifierReponse(string saisie) const override;
+        void ecrireQuestion(ostream& os) const override;
+    protected:
+        std::string bonneReponse()  const override;
+    private:
+        std::string d_bonneReponse;
+        std::string d_reponse;
+};
+#endif // QUESTIONTEXTE_H

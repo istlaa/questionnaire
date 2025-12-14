@@ -2,6 +2,9 @@
 #define QUESTIONNAIRE_H
 #include<vector>
 #include"question.h"
+#include"questionNumerique.h"
+#include"questionTexte.h"
+#include"questionChoixMultiples.h"
 #include<memory>
 #include <fstream>
 using namespace std;

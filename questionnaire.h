@@ -14,7 +14,7 @@ class questionnaire {
         questionnaire();
         questionnaire(const string &titre);
         vector<question*> questionsFausses() const;
-        int nbQuestionsRepondus()   const;
+        unsigned int nbQuestionsRepondus()   const;
         string titre()  const;
         bool estFini() const;
         int score() const;

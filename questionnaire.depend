@@ -87,3 +87,87 @@
 	<string>
 	<iostream>
 
+1765735612 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\afficheurterminal.cpp
+	"afficheurTerminal.h"
+
+1765735612 c:\users\elève\documents\qualité programmation\projet\questionnaire\afficheurterminal.h
+	"afficheur.h"
+
+1765735612 c:\users\elève\documents\qualité programmation\projet\questionnaire\afficheur.h
+	<string>
+	<iostream>
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\main.cpp
+	<iostream>
+	"menu.h"
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\menu.h
+	"questionnaire.h"
+	"afficheur.h"
+	"afficheurTerminal.h"
+
+1765736530 c:\users\elève\documents\qualité programmation\projet\questionnaire\questionnaire.h
+	<vector>
+	"question.h"
+	"questionNumerique.h"
+	"questionTexte.h"
+	"questionChoixMultiples.h"
+	<memory>
+	<fstream>
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\question.h
+	<string>
+	<vector>
+	"reponse.h"
+	<iostream>
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\reponse.h
+	<string>
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+
+1765735613 c:\users\elève\documents\qualité programmation\projet\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\menu.cpp
+	"menu.h"
+	<iostream>
+	"questionnaire.h"
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\reponse.cpp
+	"reponse.h"
+
+1765738537 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\questionnaire.cpp
+	"questionnaire.h"
+	<vector>
+	<fstream>
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+
+1765735613 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+
+1765739102 source:c:\users\elève\documents\qualité programmation\projet\questionnaire\questionchoixmultiples.cpp
+	"questionChoixMultiples.h"
+	<vector>
+

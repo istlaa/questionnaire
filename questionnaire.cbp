@@ -38,6 +38,7 @@
 		<Unit filename="afficheur.h" />
 		<Unit filename="afficheurTerminal.cpp" />
 		<Unit filename="afficheurTerminal.h" />
+		<Unit filename="doctest.h" />
 		<Unit filename="evaluationAdaptative.h" />
 		<Unit filename="evaluationSecondeChance.h" />
 		<Unit filename="evalutation.h" />
@@ -47,12 +48,21 @@
 		<Unit filename="menu.h" />
 		<Unit filename="question.cpp" />
 		<Unit filename="question.h" />
+		<Unit filename="questionChoixMultiples.cpp" />
+		<Unit filename="questionChoixMultiples.h" />
+		<Unit filename="questionNumerique.cpp" />
+		<Unit filename="questionNumerique.h" />
+		<Unit filename="questionTexte.cpp" />
+		<Unit filename="questionTexte.h" />
 		<Unit filename="questionnaire.cbp" />
 		<Unit filename="questionnaire.cpp" />
 		<Unit filename="questionnaire.depend" />
 		<Unit filename="questionnaire.h" />
 		<Unit filename="reponse.cpp" />
 		<Unit filename="reponse.h" />
+		<Unit filename="testquestionsQCM.cpp" />
+		<Unit filename="testquestionsnumerique.cpp" />
+		<Unit filename="testquestionstexte.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

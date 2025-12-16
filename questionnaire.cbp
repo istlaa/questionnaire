@@ -40,7 +40,6 @@
 		<Unit filename="afficheurTerminal.h" />
 		<Unit filename="doctest.h" />
 		<Unit filename="evaluationAdaptative.h" />
-		<Unit filename="evaluationSecondeChance.cpp" />
 		<Unit filename="evaluationSecondeChance.h" />
 		<Unit filename="evalutation.h" />
 		<Unit filename="evalutationTest.h" />
@@ -61,9 +60,6 @@
 		<Unit filename="questionnaire.h" />
 		<Unit filename="reponse.cpp" />
 		<Unit filename="reponse.h" />
-		<Unit filename="testquestionsQCM.cpp" />
-		<Unit filename="testquestionsnumerique.cpp" />
-		<Unit filename="testquestionstexte.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

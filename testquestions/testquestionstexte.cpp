@@ -1,14 +1,13 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "questionTexte.h"
-#include "afficheurTerminal.h"
+#include "../questionTexte.h"
 #include <string>
 #include <iostream>
 
 
-TEST_CASE("La classe v�rifie correctement les saisies")
+TEST_CASE("La classe verifie correctement les saisies")
 {
-    questionTexte qt{"Qui est le pr�sident de la France ?","Emmanuel Macron"};
+    questionTexte qt{"Qui est le president de la France ?","Emmanuel Macron"};
     std::string rep;
     SUBCASE("La reponse est juste")
     {

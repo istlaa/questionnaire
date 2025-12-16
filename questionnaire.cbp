@@ -40,6 +40,7 @@
 		<Unit filename="afficheurTerminal.h" />
 		<Unit filename="doctest.h" />
 		<Unit filename="evaluationAdaptative.h" />
+		<Unit filename="evaluationSecondeChance.cpp" />
 		<Unit filename="evaluationSecondeChance.h" />
 		<Unit filename="evalutation.h" />
 		<Unit filename="evalutationTest.h" />

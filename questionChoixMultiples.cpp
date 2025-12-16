@@ -20,14 +20,14 @@ void questionChoixMultiples::enleverReponse(int i)
 
 std::string questionChoixMultiples::bonneReponse()  const
 {
-    unsigned int i = 0;
+    int i = 0;
     while(i < d_reponses.size() && d_reponses[i].estJuste())
         i++;
     return d_reponses[i].nom();
 }
 bool questionChoixMultiples::verifierReponse(string saisie) const
 {
-    unsigned int i = 0;
+    int i = 0;
     while(i < d_reponses.size() && d_reponses[i].estJuste() && d_reponses[i].estSelectionne())
         i++;
     return i == d_reponses.size();

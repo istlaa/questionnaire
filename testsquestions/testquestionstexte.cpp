@@ -18,7 +18,7 @@ TEST_CASE("La classe v�rifie correctement les saisies")
     SUBCASE("La reponse est fausse")
     {
         rep = "Francois Hollande";
-        REQUIRE_UNARY_FALSE(qt.verifierReponse(rep));
+        REQUIRE_EQ(qt.verifierReponse(rep),false);
     }
 
 }

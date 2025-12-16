@@ -11,7 +11,7 @@ class questionChoixMultiples:public question{
         questionChoixMultiples(const std::string &titre,const std::vector<reponse>&reponses);
         void selectionReponse(int i);
         void enleverReponse(int i);
-        bool verifierReponse(string saisie) const override;
+        bool verifierReponse(string saisie = "") const override;
         std::vector<reponse> reponses() const;
         void ecrireQuestion(ostream& os) const override;
     protected:
@@ -19,4 +19,4 @@ class questionChoixMultiples:public question{
     private:
         std::vector<reponse> d_reponses;
 };
-#endif 
+#endif

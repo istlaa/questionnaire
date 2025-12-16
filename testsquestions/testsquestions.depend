@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1765879494 source:e:\questionnaire\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1765879494 e:\questionnaire\questionnaire\question.h
+	<string>
+	<vector>
+	"reponse.h"
+	<iostream>
+
+1765879496 e:\questionnaire\questionnaire\reponse.h
+	<string>
+
+1765879494 source:e:\questionnaire\questionnaire\questionchoixmultiples.cpp
+	"questionChoixMultiples.h"
+	<vector>
+
+1765883168 e:\questionnaire\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765879494 source:e:\questionnaire\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+
+1765879494 e:\questionnaire\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765879494 source:e:\questionnaire\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+
+1765879494 e:\questionnaire\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+
+1765881970 source:e:\questionnaire\questionnaire\testquestionsqcm.cpp
+	"doctest.h"
+	"questionChoixMultiples.h"
+	"reponse.h"
+	<vector>
+	<iostream>
+	<string>
+
+1765879494 e:\questionnaire\questionnaire\doctest.h
+	<signal.h>
+	<ciso646>
+	<cstddef>
+	<ostream>
+	<istream>
+	<type_traits>
+	"doctest_fwd.h"
+	<ctime>
+	<cmath>
+	<climits>
+	<math.h>
+	<new>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<limits>
+	<utility>
+	<fstream>
+	<sstream>
+	<iostream>
+	<algorithm>
+	<iomanip>
+	<vector>
+	<atomic>
+	<mutex>
+	<set>
+	<map>
+	<unordered_set>
+	<exception>
+	<stdexcept>
+	<csignal>
+	<cfloat>
+	<cctype>
+	<cstdint>
+	<string>
+	<sys/types.h>
+	<unistd.h>
+	<sys/sysctl.h>
+	<AfxWin.h>
+	<windows.h>
+	<io.h>
+	<sys/time.h>
+	<unistd.h>
+
+1765881960 source:e:\questionnaire\questionnaire\testquestionstexte.cpp
+	"doctest.h"
+	"questionTexte.h"
+	"afficheurTerminal.h"
+	<string>
+	<iostream>
+
+1765879494 e:\questionnaire\questionnaire\afficheurterminal.h
+	"afficheur.h"
+
+1765879494 e:\questionnaire\questionnaire\afficheur.h
+	<string>
+	<iostream>
+
+1584205420 source:e:\questionnaire\questionnaire\testsquestions\main.cpp
+	<iostream>
+
+1765881984 source:e:\questionnaire\questionnaire\testquestionsnumerique.cpp
+	"doctest.h"
+	"questionNumerique.h"
+	<iostream>
+	<string>
+
+1765879496 source:e:\questionnaire\questionnaire\reponse.cpp
+	"reponse.h"
+

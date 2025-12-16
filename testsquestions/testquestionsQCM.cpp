@@ -1,4 +1,3 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "questionChoixMultiples.h"
 #include "reponse.h"
@@ -23,6 +22,6 @@ TEST_CASE("La classe QCM fonctionne bien")
     SUBCASE("La reponse selectionnee est fausse")
     {
         repselection = "Terre";
-        REQUIRE_UNARY_FALSE(qcm.verifierReponse(repselection));
+        REQUIRE_EQ(qcm.verifierReponse(repselection),false);
     }
 }

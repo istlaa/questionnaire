@@ -1,5 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+#include"doctest.h"
 #include"questionNumerique.h"
 #include<iostream>
 #include <string>
@@ -17,6 +16,6 @@ TEST_CASE("La classe v�rfie bien les r�ponses")
     SUBCASE("La reponse n'est pas dans la portee de bonne reponse")
     {
         rep = "1939";
-        REQUIRE_UNARY_FALSE(qn.verifieReponse(rep));
+        REQUIRE_EQ(qn.verifierReponse(rep),false);
     }
 }

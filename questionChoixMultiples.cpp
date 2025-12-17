@@ -40,12 +40,12 @@ bool questionChoixMultiples::verifierReponse(string /* saisie */) const
 }
 
 
-void questionChoixMultiples::ecrireQuestion(ostream& os) const {
-    os << "Q" << endl;
-    os << titre() << endl;
-    os << d_reponses.size() << endl;
+void questionChoixMultiples::ecrireQuestion(afficheur& os) const {
+    os.affiche("Q \n");
+    os.affiche(titre()+"\n");
+    os.affiche(d_reponses.size()+"\n");
     for(const auto &r:d_reponses)
     {
-        os << r.nom() << endl;
+        os.affiche( r.nom() +"\n");
     }
 }

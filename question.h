@@ -3,6 +3,7 @@
 #include<string>
 #include<vector>
 #include"reponse.h"
+#include"afficheur.h"
 #include <iostream>
 
 using namespace std;
@@ -19,7 +20,7 @@ class question{
         enum state etat() const;
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
-        virtual void ecrireQuestion(ostream& os) const = 0;
+        virtual void ecrireQuestion(afficheur& os) const = 0;
     protected:
         virtual std::string bonneReponse()  const = 0;
     private:

@@ -5,6 +5,7 @@
 #include<vector>
 #include"reponse.h"
 #include"question.h"
+#include "afficheur.h"
 #include <iostream>
 class questionChoixMultiples:public question{
     public:
@@ -13,7 +14,7 @@ class questionChoixMultiples:public question{
         void enleverReponse(int i);
         bool verifierReponse(string saisie = "") const override;
         const std::vector<reponse> reponses() const;
-        void ecrireQuestion(ostream& os) const override;
+        void ecrireQuestion(afficheur& os) const override;
     protected:
         std::string bonneReponse()  const override;
     private:

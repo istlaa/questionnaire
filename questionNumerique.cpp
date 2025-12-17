@@ -16,10 +16,10 @@ bool questionNumerique::verifierReponse(string saisie) const  {
 }
 
 
-void questionNumerique::ecrireQuestion(ostream& os) const {
-    os<< "N" << endl;
-    os << titre() << endl;
-    os<< d_reponse << endl;
-    os<< d_min << endl;
-    os<< d_max << endl;
+void questionNumerique::ecrireQuestion(afficheur& os) const {
+    os.affiche("N\n");
+    os.affiche(titre()+"\n");
+    os.affiche("d_reponse\n");
+    os.affiche(d_min+"\n");
+    os.affiche(d_max+"\n");
     }

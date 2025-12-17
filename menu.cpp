@@ -103,8 +103,10 @@ void menu::chargerQuestionnaire()
     string fichier = recupererNomFichier();
     questionnaire q {"test"};
 
-
     d_questionnaireCharge = q.chargement(fichier);
+
+    if(!d_questionnaireCharge)
+        d_afficheur.affiche("Erreur de chargement veuillez reessayez.\n");
 
 
 }
@@ -112,6 +114,8 @@ void menu::chargerQuestionnaire()
 
 void menu::lancerApprentissage()
 {
+    d_afficheur.affiche("\n===== MODE APPRENTISSAGE =====\n");
+
 
 }
 void menu::lancerEvaluation()

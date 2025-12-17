@@ -16,7 +16,7 @@ bool questionNumerique::verifierReponse(string saisie) const  {
 }
 
 
-void questionNumerique::ecrireQuestion(afficheur& os) const {
+void questionNumerique::afficherQuestion(afficheur& os) const {
     os.affiche("N\n");
     os.affiche(titre()+"\n");
     os.affiche("d_reponse\n");

@@ -14,7 +14,7 @@ class questionChoixMultiples:public question{
         void enleverReponse(int i);
         bool verifierReponse(string saisie = "") const override;
         const std::vector<reponse> reponses() const;
-        void ecrireQuestion(afficheur& os) const override;
+        void afficherQuestion(afficheur& os) const override;
 
         const std::string bonneReponse()  const override;
     private:

@@ -13,16 +13,11 @@ void apprentissage::commencer(afficheur& a)
 
     for (const auto& q : d_questionnaire.questions())
     {
-
-        q->ecrireQuestion(a);
-
-        // Affichage immédiat de la réponse (apprentissage)
-        a.affiche("\nRéponse : ");
-        a.affiche(q->bonneReponse());
+        q->afficherQuestion(a);
         a.affiche("\n");
 
-        // Pause pédagogique
-        a.affiche("\nAppuyez sur Entrée pour continuer...");
+        // Pause
+        a.affiche("\nEntrez n'importe quel touche pour continuer : ");
         a.demanderString();
 
         a.affiche("\n-----------------------------\n");

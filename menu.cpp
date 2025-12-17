@@ -64,14 +64,14 @@ int choix;
 
     } while (choix != TROISIEME);
 }
-void menu::afficherEnTete()
+void menu::afficherEnTete(const string& entete)
 {
-    d_afficheur.affiche("\n===== MENU PRINCIPAL =====\n");
+    d_afficheur.affiche("\n===== "+entete+" =====\n");
 }
 
 int menu::lancerMenuDepart()
 {
-        afficherEnTete();
+        afficherEnTete("MENU PRINCIPAL");
         d_afficheur.affiche(to_string(PREMIER)+". Charger un questionnaire\n");
         d_afficheur.affiche(to_string(DEUXIEME)+". Quitter\n");
         d_afficheur.affiche("Votre choix : ");
@@ -80,7 +80,7 @@ int menu::lancerMenuDepart()
 }
 
 int menu::lancerMenuPrincipal() {
-    afficherEnTete();
+    afficherEnTete("MENU PRINCIPAL");
     d_afficheur.affiche(to_string(PREMIER)+". Mode apprentissage\n");
     d_afficheur.affiche(to_string(DEUXIEME)+". Mode evaluation\n");
     d_afficheur.affiche(to_string(TROISIEME)+". Quitter\n");
@@ -89,7 +89,7 @@ int menu::lancerMenuPrincipal() {
         return choix;
 }
 
-string menu::recupererNomFichier() const
+const string menu::recupererNomFichier() const
 {
     string nomFichier;
     d_afficheur.affiche("Nom du fichier : ");
@@ -116,10 +116,9 @@ void menu::chargerQuestionnaire()
 
 void menu::lancerApprentissage()
 {
-    d_afficheur.affiche("\n===== MODE APPRENTISSAGE =====\n");
+    afficherEnTete("MODE APPRENTISSAGE");
     apprentissage a{d_questionnaire};
     a.commencer(d_afficheur);
-
 
 }
 void menu::lancerEvaluation()

@@ -17,7 +17,7 @@ std::string questionTexte::reponseDonnee()  const
 bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
 }
-void questionTexte::ecrireQuestion(afficheur& os) const {
+void questionTexte::afficherQuestion(afficheur& os) const {
     os.affiche("T\n");
     os.affiche(titre()+"\n");
     os.affiche(d_bonneReponse+"\n");

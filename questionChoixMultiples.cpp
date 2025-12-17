@@ -40,7 +40,7 @@ bool questionChoixMultiples::verifierReponse(string /* saisie */) const
 }
 
 
-void questionChoixMultiples::ecrireQuestion(afficheur& os) const {
+void questionChoixMultiples::afficherQuestion(afficheur& os) const {
     os.affiche("Q \n");
     os.affiche(titre()+"\n");
     os.affiche(d_reponses.size()+"\n");

@@ -20,7 +20,7 @@ public:
     int lancerMenuDepart();
     int lancerMenuPrincipal();
     int afficherMenuEvaluation();
-    void afficherEnTete();
+    void afficherEnTete(const string& entete);
     void choixInvalide();
     void choixQuitter();
 
@@ -28,7 +28,7 @@ public:
     void lancerApprentissage();
     void lancerEvaluation();
 
-    string recupererNomFichier()const;
+    const string recupererNomFichier()const;
     bool questionnaireEstCharge() const;
 
 

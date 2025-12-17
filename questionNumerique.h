@@ -12,6 +12,7 @@ class questionNumerique : public question{
         questionNumerique(const string& titre, int reponse, int min, int max);
         bool verifierReponse(string saisie) const override ;
         void ecrireQuestion(afficheur& os) const override;
+        void ecrireDansFichier(std::ofstream& fichier) override;
 
         const string bonneReponse() const override;
     private:

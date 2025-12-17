@@ -75,7 +75,7 @@ void questionnaire::sauvegarder(const string& nomFichier) const
         fichier << "Score: " << d_score << "\n\n";
         for(const auto &q:d_questions)
         {
-           // q->ecrireQuestion(fichier);
+           q->ecrireDansFichier(fichier);
             fichier << "\n";
         }
     }

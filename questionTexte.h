@@ -12,6 +12,7 @@ class questionTexte:public question{
         bool verifierReponse(string saisie) const override;
         void ecrireQuestion(afficheur& os) const override;
         const std::string bonneReponse()  const override;
+        void ecrireDansFichier(std::ofstream& fichier) override;
     private:
         std::string d_bonneReponse;
         std::string d_reponse;

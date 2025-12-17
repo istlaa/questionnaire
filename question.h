@@ -21,6 +21,7 @@ class question{
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
         virtual void ecrireQuestion(afficheur& os) const = 0;
+        virtual void ecrireDansFichier(std::ofstream& fichier)=0;
 
         virtual const std::string bonneReponse()  const = 0;
     private:

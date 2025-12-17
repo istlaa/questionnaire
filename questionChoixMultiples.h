@@ -15,6 +15,7 @@ class questionChoixMultiples:public question{
         bool verifierReponse(string saisie = "") const override;
         const std::vector<reponse> reponses() const;
         void ecrireQuestion(afficheur& os) const override;
+        void ecrireDansFichier(std::ofstream& fichier) override;
 
         const std::string bonneReponse()  const override;
     private:

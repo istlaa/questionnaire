@@ -6,7 +6,7 @@ using std::cout;
 using std::cin;
 using std::to_string;
 
-menu::menu(afficheur& affiche): d_afficheur{affiche}, d_questionnaireCharge{false} {}
+menu::menu(afficheur& affiche): d_afficheur{affiche}, d_questionnaireCharge{false}, d_questionnaire{""} {}
 
 
 bool menu::questionnaireEstCharge() const {
@@ -101,12 +101,14 @@ string menu::recupererNomFichier() const
 void menu::chargerQuestionnaire()
 {
     string fichier = recupererNomFichier();
-    questionnaire q {"test"};
+    d_questionnaire = questionnaire{"questionnaire"};
 
-    d_questionnaireCharge = q.chargement(fichier);
+    d_questionnaireCharge = d_questionnaire.chargement(fichier);
+
 
     if(!d_questionnaireCharge)
         d_afficheur.affiche("Erreur de chargement veuillez reessayez.\n");
+
 
 
 }
@@ -115,6 +117,8 @@ void menu::chargerQuestionnaire()
 void menu::lancerApprentissage()
 {
     d_afficheur.affiche("\n===== MODE APPRENTISSAGE =====\n");
+    apprentissage a{d_questionnaire};
+    a.commencer(d_afficheur);
 
 
 }

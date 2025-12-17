@@ -4,7 +4,7 @@
 questionTexte::questionTexte(const std::string &titre,const std::string &bonnereponse):question{titre},d_bonneReponse{bonnereponse}
 {}
 
-std::string questionTexte::bonneReponse()   const
+const std::string questionTexte::bonneReponse()   const
 {
     return d_bonneReponse;
 }

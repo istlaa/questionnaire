@@ -10,15 +10,15 @@ apprentissage::apprentissage(const questionnaire& q)
 
 void apprentissage::commencer(afficheur& a)
 {
-/*
+
     for (const auto& q : d_questionnaire.questions())
     {
 
-        q->ecrireQuestion(cout);
+        q->ecrireQuestion(a);
 
         // Affichage immédiat de la réponse (apprentissage)
         a.affiche("\nRéponse : ");
-        a.affiche(q->afficherBonneReponse());
+        a.affiche(q->bonneReponse());
         a.affiche("\n");
 
         // Pause pédagogique
@@ -28,5 +28,5 @@ void apprentissage::commencer(afficheur& a)
         a.affiche("\n-----------------------------\n");
     }
 
-    a.affiche("\nFin du mode apprentissage.\n");*/
+    a.affiche("\nFin du mode apprentissage.\n");
 }

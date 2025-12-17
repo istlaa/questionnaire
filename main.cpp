@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-
     afficheurTerminal a{};
     menu m{a};
     m.executionProgramme();

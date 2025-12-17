@@ -12,8 +12,8 @@ class questionNumerique : public question{
         questionNumerique(const string& titre, int reponse, int min, int max);
         bool verifierReponse(string saisie) const override ;
         void ecrireQuestion(afficheur& os) const override;
-    protected:
-        string bonneReponse() const override;
+
+        const string bonneReponse() const override;
     private:
         int d_reponse;
         int d_min;

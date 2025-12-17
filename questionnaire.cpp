@@ -21,6 +21,8 @@ questionnaire::questionnaire(const string &titre):d_score{0},d_titre{titre}
 *****************************************************************************************************
 */
 
+const vector<unique_ptr<question>>& questionnaire::questions() const { return d_questions;}
+
 vector<question*> questionnaire::questionsFausses()  const
 {
     vector<question*> qFausses{};

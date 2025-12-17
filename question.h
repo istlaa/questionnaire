@@ -21,8 +21,8 @@ class question{
         void changeEtat(const enum state &nouvelEtat);
         virtual bool verifierReponse(string saisie) const = 0;
         virtual void ecrireQuestion(afficheur& os) const = 0;
-    protected:
-        virtual std::string bonneReponse()  const = 0;
+
+        virtual const std::string bonneReponse()  const = 0;
     private:
         std::string d_titre;
         enum state d_etat;

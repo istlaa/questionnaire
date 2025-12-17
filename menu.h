@@ -3,6 +3,7 @@
 #include "questionnaire.h"
 #include "afficheur.h"
 #include "afficheurTerminal.h"
+#include "apprentissage.h"
 
 
 using std::string;
@@ -34,6 +35,7 @@ public:
 private:
     afficheur& d_afficheur;
     bool d_questionnaireCharge;
+    questionnaire d_questionnaire;
     static constexpr int PREMIER {1};
     static constexpr int DEUXIEME {2};
     static constexpr int TROISIEME {3};

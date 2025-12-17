@@ -2,7 +2,7 @@
 #include<vector>
 questionNumerique::questionNumerique(const string& titre,int reponse,int min,int max) : question(titre),d_reponse{reponse},d_min{min},d_max{max}{}
 
-std::string questionNumerique::bonneReponse()   const
+const std::string questionNumerique::bonneReponse()   const
 {
     return to_string(d_reponse);
 }

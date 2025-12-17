@@ -11,8 +11,7 @@ class questionTexte:public question{
         std::string reponseDonnee() const;
         bool verifierReponse(string saisie) const override;
         void ecrireQuestion(afficheur& os) const override;
-    protected:
-        std::string bonneReponse()  const override;
+        const std::string bonneReponse()  const override;
     private:
         std::string d_bonneReponse;
         std::string d_reponse;

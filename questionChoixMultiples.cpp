@@ -18,7 +18,7 @@ void questionChoixMultiples::enleverReponse(int i)
     d_reponses[i].changeSelection(false);
 }
 
-std::string questionChoixMultiples::bonneReponse() const
+const std::string questionChoixMultiples::bonneReponse() const
 {
     for(const auto& r : d_reponses)
     {

@@ -11,7 +11,6 @@ using namespace std;
 
 class questionnaire {
     public:
-        questionnaire();
         questionnaire(const string &titre);
         vector<question*> questionsFausses() const;
         unsigned int nbQuestionsRepondus()   const;
@@ -21,6 +20,7 @@ class questionnaire {
         void changeScore(int nscore);
         void sauvegarder(const string& nomFichier) const;
         bool chargement(const string& nomFichier);
+        const vector<unique_ptr<question>>& questions() const;
     private:
         void ajouteQuestion(unique_ptr<question> q);
         vector<unique_ptr<question>>d_questions;

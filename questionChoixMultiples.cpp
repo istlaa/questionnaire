@@ -1,5 +1,7 @@
-#include"questionChoixMultiples.h"
-#include<vector>
+#include <iostream>  
+#include <fstream>
+#include <vector>    
+#include "questionChoixMultiples.h"
 questionChoixMultiples::questionChoixMultiples(const std::string &titre,const std::vector<reponse>&reponses):question{titre},d_reponses{reponses}
 {}
 
@@ -47,5 +49,15 @@ void questionChoixMultiples::afficherQuestion(afficheur& os) const {
     for(const auto &r:d_reponses)
     {
         os.affiche( r.nom() +"\n");
+    }
+}
+void questionChoixMultiples::ecrireDansFichier(std::ofstream& fichier){
+    fichier << "Q\n";
+    fichier << titre() << "\n";
+    fichier << d_reponses.size() << "\n";
+    for(const auto &r:d_reponses)
+    {
+        fichier << r.nom() << "\n";
+        fichier << r.estJuste() << "\n";
     }
 }

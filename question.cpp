@@ -1,7 +1,7 @@
 #include"question.h"
 #include<vector>
 
-question::question(const std::string &titre):d_etat{NONREPONDU},d_titre{titre}
+question::question(const std::string &titre):d_titre{titre},d_etat{NONREPONDU}
 {}
 
 std::string question::titre()   const

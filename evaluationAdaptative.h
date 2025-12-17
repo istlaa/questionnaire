@@ -15,7 +15,7 @@ public:
 
 private:
     bool d_afficherBonneReponse = false;
-    std::mt19937 d_rng;
+    std::mt19937 d_rng; // Générateur de nombre
 };
 
 #endif

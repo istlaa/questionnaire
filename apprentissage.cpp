@@ -13,8 +13,10 @@ void apprentissage::commencer(afficheur& a)
 
     for (const auto& q : d_questionnaire.questions())
     {
-        q->afficherQuestion(a);
+        a.affiche(q->titre());
         a.affiche("\n");
+        a.affiche("La bonne reponse : " + q->bonneReponse() + "\n");
+
 
         // Pause
         a.affiche("\nEntrez n'importe quel touche pour continuer : ");

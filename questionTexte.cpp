@@ -1,7 +1,7 @@
 #include"questionTexte.h"
 #include<vector>
-#include <iostream>  
-#include <fstream>  
+#include <iostream>
+#include <fstream>
 questionTexte::questionTexte(const std::string &titre,const std::string &bonnereponse):question{titre},d_bonneReponse{bonnereponse}
 {}
 
@@ -18,11 +18,7 @@ std::string questionTexte::reponseDonnee()  const
 bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
 }
-void questionTexte::afficherQuestion(afficheur& os) const {
-    os.affiche("T\n");
-    os.affiche(titre()+"\n");
-    os.affiche(d_bonneReponse+"\n");
-    }
+
 
 void questionTexte::ecrireDansFichier(std::ofstream& fichier){
     fichier << "T\n";

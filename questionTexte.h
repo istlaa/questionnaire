@@ -10,7 +10,6 @@ class questionTexte:public question{
         questionTexte(const std::string &titre,const std::string &bonnereponse);
         std::string reponseDonnee() const;
         bool verifierReponse(string saisie) const override;
-        void afficherQuestion(afficheur& os) const override;
         const std::string bonneReponse()  const override;
         void ecrireDansFichier(std::ofstream& fichier) override;
     private:

@@ -1,12 +1,21 @@
 #include"questionNumerique.h"
 #include<vector>
-#include <iostream>  
-#include <fstream>  
+#include <iostream>
+#include <fstream>
 questionNumerique::questionNumerique(const string& titre,int reponse,int min,int max) : question(titre),d_reponse{reponse},d_min{min},d_max{max}{}
 
-const std::string questionNumerique::bonneReponse()   const
+const string questionNumerique::bonneReponse()   const
 {
-    return to_string(d_reponse);
+    return std::to_string(d_reponse);
+}
+
+const int questionNumerique::min() const
+{
+    return d_max;
+}
+const int questionNumerique::max() const
+{
+    return d_min;
 }
 
 
@@ -18,14 +27,8 @@ bool questionNumerique::verifierReponse(string saisie) const  {
 }
 
 
-void questionNumerique::afficherQuestion(afficheur& os) const {
-    os.affiche("N\n");
-    os.affiche(titre()+"\n");
-    os.affiche("d_reponse\n");
-    os.affiche(d_min+"\n");
-    os.affiche(d_max+"\n");
-    }
-void questionNumerique::ecrireDansFichier(std::ofstream& fichier){ 
+
+void questionNumerique::ecrireDansFichier(std::ofstream& fichier){
     fichier << "N\n";
     fichier << titre() << "\n";
     fichier << d_reponse << "\n";

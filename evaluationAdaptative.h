@@ -2,6 +2,7 @@
 #define EVALUATION_ADAPTATIVE_H
 
 #include "evaluation.h"
+#include "questionnaire.h"
 #include <random>
 #include <vector>
 
@@ -21,6 +22,8 @@ public:
 private:
     bool d_afficherBonneReponse = false;
     std::mt19937 d_rng;
+    questionnaire d_questionnaire; 
+    size_t d_index = 0;
 };
 
 #endif

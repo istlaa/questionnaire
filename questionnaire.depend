@@ -61,32 +61,33 @@
 	<memory>
 	<fstream>
 
-1765974849 c:\users\genis\desktop\cours\projet\questionnaire\question.h
-	<string>
-	<vector>
+1765979690 c:\users\genis\desktop\cours\projet\questionnaire\question.h
 	"reponse.h"
 	"afficheur.h"
+	<string>
+	<vector>
 	<iostream>
 
-1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
+1765976073 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
 	"question.h"
 	<vector>
 
-1765967291 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
+1765975639 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
 	"questionnaire.h"
 	<vector>
 	<fstream>
 
-1765967914 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
+1765977132 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
 	"menu.h"
 	<iostream>
 	"questionnaire.h"
 
-1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
+1765978279 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
 	"afficheurTerminal.h"
 
-1765875468 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
+1765977268 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
 	"afficheur.h"
+	<limits>
 
 1765875468 c:\users\genis\desktop\cours\projet\questionnaire\afficheur.h
 	<string>
@@ -260,7 +261,7 @@
 1765879496 source:e:\questionnaire\questionnaire\reponse.cpp
 	"reponse.h"
 
-1765974828 c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.h
+1765979680 c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.h
 	<string>
 	<vector>
 	"reponse.h"
@@ -268,12 +269,12 @@
 	"afficheur.h"
 	<iostream>
 
-1765974833 c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.h
+1765979675 c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.h
 	<string>
 	"question.h"
 	"afficheur.h"
 
-1765974822 c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.h
+1765979685 c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.h
 	<string>
 	<vector>
 	"reponse.h"
@@ -281,17 +282,23 @@
 	"afficheur.h"
 	<iostream>
 
-1765974808 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.cpp
+1765979464 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.cpp
 	"questionNumerique.h"
 	<vector>
+	<iostream>
+	<fstream>
 
-1765974812 source:c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.cpp
+1765979329 source:c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.cpp
 	"questionTexte.h"
 	<vector>
+	<iostream>
+	<fstream>
 
-1765974802 source:c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.cpp
-	"questionChoixMultiples.h"
+1765979243 source:c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.cpp
+	<iostream>
+	<fstream>
 	<vector>
+	"questionChoixMultiples.h"
 
 1765974997 source:c:\users\genis\desktop\cours\projet\questionnaire\apprentissage.cpp
 	"apprentissage.h"

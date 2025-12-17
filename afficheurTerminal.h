@@ -1,6 +1,7 @@
 #ifndef AFFICHEURTERMINAL_H
 #define AFFICHEURTERMINAL_H
 #include "afficheur.h"
+#include <limits>
 using std::string;
 using std::cin;
 using std::cout;

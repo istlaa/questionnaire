@@ -12,7 +12,7 @@ class questionChoixMultiples:public question{
         void selectionReponse(int i);
         void enleverReponse(int i);
         bool verifierReponse(string saisie = "") const override;
-        std::vector<reponse> reponses() const;
+        const std::vector<reponse> reponses() const;
         void ecrireQuestion(ostream& os) const override;
     protected:
         std::string bonneReponse()  const override;

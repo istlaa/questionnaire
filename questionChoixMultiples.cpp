@@ -8,7 +8,7 @@ void questionChoixMultiples::selectionReponse(int i)
     d_reponses[i].changeSelection(true);
 }
 
-std::vector<reponse> questionChoixMultiples::reponses() const
+const std::vector<reponse> questionChoixMultiples::reponses() const
 {
     return d_reponses;
 }

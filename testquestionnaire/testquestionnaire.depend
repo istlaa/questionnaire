@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1765978224 source:e:\questionnaire\questionnaire\afficheurterminal.cpp
+	"afficheurTerminal.h"
+
+1765978224 e:\questionnaire\questionnaire\afficheurterminal.h
+	"afficheur.h"
+
+1765978224 e:\questionnaire\questionnaire\afficheur.h
+	<string>
+	<iostream>
+
+1765978226 source:e:\questionnaire\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1765978226 e:\questionnaire\questionnaire\question.h
+	<string>
+	<vector>
+	"reponse.h"
+	"afficheur.h"
+	<iostream>
+
+1765978226 e:\questionnaire\questionnaire\reponse.h
+	<string>
+
+1765978226 source:e:\questionnaire\questionnaire\questionchoixmultiples.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"questionChoixMultiples.h"
+
+1765978226 e:\questionnaire\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	"afficheur.h"
+	<iostream>
+
+1766005712 source:e:\questionnaire\questionnaire\questionnaire.cpp
+	"questionnaire.h"
+	<vector>
+	<fstream>
+
+1766005588 e:\questionnaire\questionnaire\questionnaire.h
+	<vector>
+	"question.h"
+	"questionNumerique.h"
+	"questionTexte.h"
+	"questionChoixMultiples.h"
+	<memory>
+	<fstream>
+
+1765978226 e:\questionnaire\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	"afficheur.h"
+	<iostream>
+
+1765978226 e:\questionnaire\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+	"afficheur.h"
+
+1765978226 source:e:\questionnaire\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+	<iostream>
+	<fstream>
+
+1765978226 source:e:\questionnaire\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+	<iostream>
+	<fstream>
+
+1765978226 source:e:\questionnaire\questionnaire\reponse.cpp
+	"reponse.h"
+
+1765981214 source:e:\questionnaire\questionnaire\testquestionnaire\testquestionnaire.cpp
+	"../doctest.h"
+	"../questionnaire.h"
+
+1765979564 e:\questionnaire\questionnaire\doctest.h
+	<signal.h>
+	<ciso646>
+	<cstddef>
+	<ostream>
+	<istream>
+	<type_traits>
+	"doctest_fwd.h"
+	<ctime>
+	<cmath>
+	<climits>
+	<math.h>
+	<new>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<limits>
+	<utility>
+	<fstream>
+	<sstream>
+	<iostream>
+	<algorithm>
+	<iomanip>
+	<vector>
+	<atomic>
+	<mutex>
+	<set>
+	<map>
+	<unordered_set>
+	<exception>
+	<stdexcept>
+	<csignal>
+	<cfloat>
+	<cctype>
+	<cstdint>
+	<string>
+	<sys/types.h>
+	<unistd.h>
+	<sys/sysctl.h>
+	<AfxWin.h>
+	<windows.h>
+	<io.h>
+	<sys/time.h>
+	<unistd.h>
+

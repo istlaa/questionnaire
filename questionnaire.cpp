@@ -8,7 +8,7 @@
 *****************************************************************************************************
 *****************************************************************************************************
 */
-questionnaire::questionnaire(const string &titre):d_score{0},d_titre{titre}
+questionnaire::questionnaire(const string &titre):d_titre{titre},d_questions{}
 {}
 
 
@@ -23,7 +23,7 @@ questionnaire::questionnaire(const string &titre):d_score{0},d_titre{titre}
 
 const vector<unique_ptr<question>>& questionnaire::questions() const { return d_questions;}
 
-vector<question*> questionnaire::questionsFausses()  const
+/*vector<question*> questionnaire::questionsFausses()  const
 {
     vector<question*> qFausses{};
     for(const auto &q:d_questions)
@@ -32,14 +32,14 @@ vector<question*> questionnaire::questionsFausses()  const
             qFausses.push_back(q.get());
     }
     return qFausses;
-}
+}*/
 
-int questionnaire::score()  const
+/*int questionnaire::score()  const
 {
     return d_score;
-}
+}*/
 
-unsigned int questionnaire::nbQuestionsRepondus()    const
+/*int questionnaire::nbQuestionsRepondus()    const
 {
     unsigned int nb = 0;
     for(const auto &q:d_questions)
@@ -48,22 +48,22 @@ unsigned int questionnaire::nbQuestionsRepondus()    const
             nb++;
     }
     return nb;
-}
+}*/
 
 string questionnaire::titre()   const
 {
     return d_titre;
 }
 
-bool questionnaire::estFini()   const
+/*bool questionnaire::estFini()   const
 {
     return nbQuestionsRepondus() == d_questions.size();
-}
+}*/
 
-void questionnaire::changeScore(int nscore)
+/*void questionnaire::changeScore(int nscore)
 {
     d_score = nscore;
-}
+}*/
 
 
 void questionnaire::sauvegarder(const string& nomFichier) const
@@ -72,7 +72,6 @@ void questionnaire::sauvegarder(const string& nomFichier) const
     if(fichier)
     {
         fichier << "Questionnaire: " << d_titre << "\n";
-        fichier << "Score: " << d_score << "\n\n";
         for(const auto &q:d_questions)
         {
            q->ecrireDansFichier(fichier);

@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1765203032 source:c:\users\genis\desktop\cours\projet\questionnaire\reponse.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\reponse.cpp
 	"reponse.h"
 
-1765203032 c:\users\genis\desktop\cours\projet\questionnaire\reponse.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\reponse.h
 	<string>
 
-1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\main.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\main.cpp
 	<iostream>
 	"menu.h"
 
-1765531297 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\menu.h
 	"questionnaire.h"
 	"afficheur.h"
 	"afficheurTerminal.h"
@@ -51,39 +51,42 @@
 1765440481 source:u:\bureau\projet\questionnaire\questionnaire.cpp
 	"questionnaire.h"
 
-1765537405 c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.h
 	<vector>
 	"question.h"
+	"questionNumerique.h"
+	"questionTexte.h"
+	"questionChoixMultiples.h"
 	<memory>
 	<fstream>
 
-1765531297 c:\users\genis\desktop\cours\projet\questionnaire\question.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\question.h
 	<string>
 	<vector>
 	"reponse.h"
 	<iostream>
 
-1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
 	"question.h"
 	<vector>
 
-1765537430 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
 	"questionnaire.h"
 	<vector>
 	<fstream>
 
-1765537425 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\menu.cpp
 	"menu.h"
 	<iostream>
 	"questionnaire.h"
 
-1765531297 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.cpp
 	"afficheurTerminal.h"
 
-1765531297 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\afficheurterminal.h
 	"afficheur.h"
 
-1765531297 c:\users\genis\desktop\cours\projet\questionnaire\afficheur.h
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\afficheur.h
 	<string>
 	<iostream>
 
@@ -254,4 +257,30 @@
 
 1765879496 source:e:\questionnaire\questionnaire\reponse.cpp
 	"reponse.h"
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+
+1765963693 c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
 

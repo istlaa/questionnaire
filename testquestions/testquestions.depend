@@ -156,3 +156,140 @@
 	<string>
 	<iostream>
 
+1765964248 source:c:\users\genis\desktop\cours\projet\questionnaire\testquestions\testquestionsqcm.cpp
+	"../questionChoixMultiples.h"
+	"../reponse.h"
+	"doctest.h"
+	<vector>
+	<iostream>
+	<string>
+
+1765963693 c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\reponse.h
+	<string>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\question.h
+	<string>
+	<vector>
+	"reponse.h"
+	<iostream>
+
+1765963693 c:\users\genis\desktop\cours\projet\questionnaire\testquestions\doctest.h
+	<signal.h>
+	<ciso646>
+	<cstddef>
+	<ostream>
+	<istream>
+	<type_traits>
+	"doctest_fwd.h"
+	<ctime>
+	<cmath>
+	<climits>
+	<math.h>
+	<new>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<limits>
+	<utility>
+	<fstream>
+	<sstream>
+	<iostream>
+	<algorithm>
+	<iomanip>
+	<vector>
+	<atomic>
+	<mutex>
+	<set>
+	<map>
+	<unordered_set>
+	<exception>
+	<stdexcept>
+	<csignal>
+	<cfloat>
+	<cctype>
+	<cstdint>
+	<string>
+	<sys/types.h>
+	<unistd.h>
+	<sys/sysctl.h>
+	<AfxWin.h>
+	<windows.h>
+	<io.h>
+	<sys/time.h>
+	<unistd.h>
+
+1765964253 source:c:\users\genis\desktop\cours\projet\questionnaire\testquestions\testquestionstexte.cpp
+	"doctest.h"
+	"../questionTexte.h"
+	<string>
+	<iostream>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+
+1765964243 source:c:\users\genis\desktop\cours\projet\questionnaire\testquestions\testquestionsnumerique.cpp
+	"../questionNumerique.h"
+	"doctest.h"
+	<iostream>
+	<string>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	<iostream>
+
+1765963693 c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.cpp
+	"questionChoixMultiples.h"
+	<vector>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1765965052 source:c:\users\genis\desktop\cours\projet\questionnaire\questionchoixmultiples.cpp
+	"questionChoixMultiples.h"
+	<vector>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.cpp
+	"questionnaire.h"
+	<vector>
+	<fstream>
+
+1765875468 c:\users\genis\desktop\cours\projet\questionnaire\questionnaire.h
+	<vector>
+	"question.h"
+	"questionNumerique.h"
+	"questionTexte.h"
+	"questionChoixMultiples.h"
+	<memory>
+	<fstream>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+
+1765875468 source:c:\users\genis\desktop\cours\projet\questionnaire\reponse.cpp
+	"reponse.h"
+

@@ -15,11 +15,12 @@ class questionnaire {
         string titre()  const;
         /*int score() const;
         void changeScore(int nscore);*/
-        void sauvegarder(const string& nomFichier) const;
+        bool sauvegarder(const string& nomFichier) const;
         bool chargement(const string& nomFichier);
         const vector<unique_ptr<question>>& questions() const;
-    private:
         void ajouteQuestion(unique_ptr<question> q);
+    private:
+        
         vector<unique_ptr<question>>d_questions;
         string d_titre;
 };

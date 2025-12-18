@@ -66,7 +66,7 @@ string questionnaire::titre()   const
 }*/
 
 
-void questionnaire::sauvegarder(const string& nomFichier) const
+bool questionnaire::sauvegarder(const string& nomFichier) const
 {
     ofstream fichier(nomFichier);
     if(fichier)
@@ -77,8 +77,12 @@ void questionnaire::sauvegarder(const string& nomFichier) const
            q->ecrireDansFichier(fichier);
             fichier << "\n";
         }
+        fichier.close();
+        return true;
+    } else {
+        return false;
     }
-    fichier.close();
+    
 }
 
 void questionnaire::ajouteQuestion(unique_ptr<question> q)

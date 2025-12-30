@@ -1,26 +1,33 @@
-#ifndef EVALUATION_SECONDE_CHANCE_H
-#define EVALUATION_SECONDE_CHANCE_H
+#ifndef EVALUATIONSECONDECHANCE_H
+#define EVALUATIONSECONDECHANCE_H
 
 #include "evaluation.h"
-#include <vector>
 
-class EvaluationSecondeChance : public Evaluation {
+class evaluationSecondeChance : public evaluation {
 public:
-    EvaluationSecondeChance(const questionnaire& q);
+    explicit evaluationSecondeChance(questionnaire& q);
 
-    bool aUneQuestion() const override;
+    void commencer() override;
+    bool aEncoreDesQuestions() const override;
     question& questionCourante() override;
-    void donneReponse(const std::string& rep) override;
+
+    void repondre(const std::string& saisie) override;
     bool peutAfficherBonneReponse() const override;
-    vector<question*> questionsFausses() const override;
     void questionSuivante() override;
-    int score() const override;
-    void changeScore(int nscore) override;
-    bool estFini() const override;
-    int nbQuestionsRepondus()   const override;
+
+    int nombreQuestions() const override;
+    int nombreEssais() const override;
+    int nombreBonnesReponses() const override;
+
 private:
-    bool d_dejaRateUneFois = false;
-    bool d_afficherBonneReponse = false;
+    int d_index;
+    int d_essais;
+    int d_bonnesReponses;
+    bool d_dejaReposee;
+    bool d_afficherBonneReponse;
 };
 
 #endif
+
+
+

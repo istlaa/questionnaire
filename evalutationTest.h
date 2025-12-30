@@ -1,19 +1,29 @@
-#ifndef EVALUATION_TEST_H
-#define EVALUATION_TEST_H
+#ifndef EVALUATIONTEST_H
+#define EVALUATIONTEST_H
 
 #include "evaluation.h"
 
-class EvaluationTest : public Evaluation {
+class evaluationTest : public evaluation {
 public:
-    EvaluationTest(const questionnaire& q);
-    bool aUneQuestion() const override;
+    explicit evaluationTest(questionnaire& q);
+
+    void commencer() override;
+    bool aEncoreDesQuestions() const override;
     question& questionCourante() override;
-    void donneReponse(const std::string& rep) override;
+
+    void repondre(const std::string& saisie) override;
     bool peutAfficherBonneReponse() const override;
     void questionSuivante() override;
 
+    int nombreQuestions() const override;
+    int nombreEssais() const override;
+    int nombreBonnesReponses() const override;
+
 private:
-    bool d_afficherBonneReponse = false;
+    int d_index;
+    int d_essais;
+    int d_bonnesReponses;
 };
 
 #endif
+

@@ -1,41 +1,76 @@
 #include "evaluationAdaptative.h"
-#include <vector>
-#include <string>
+#include <algorithm>
 #include <random>
-#include <stdexcept>
-using std::out_of_range;
 
-// Utilisation de d_questionnaire et d_index
-EvaluationAdaptative::EvaluationAdaptative(const questionnaire& q) 
-    : d_questionnaire(q), d_index(0) {}
+evaluationAdaptative::evaluationAdaptative(questionnaire& q)
+    : evaluation(q), d_position(0), d_essais(0), d_bonnesReponses(0)
+{}
 
-bool EvaluationAdaptative::aUneQuestion() const {
-    return d_index < d_questionnaire.questions().size();
+void evaluationAdaptative::commencer()
+{
+    int n = static_cast<int>(questionnaireRef().questions().size());
+
+    d_indices.resize(n);
+    for (int i = 0; i < n; ++i)
+        d_indices[i] = i;
+
+    std::random_shuffle(d_indices.begin(), d_indices.end());
+
+    d_position = 0;
+    d_essais = 0;
+    d_bonnesReponses = 0;
 }
 
-question& EvaluationAdaptative::questionCourante() {
-    if (!aUneQuestion()) {
-        throw out_of_range("Plus de questions disponibles.");
-    }
-    return *d_questionnaire.questions()[d_index];
+
+bool evaluationAdaptative::aEncoreDesQuestions() const
+{
+    return d_position < static_cast<int>(d_indices.size());
 }
 
-void EvaluationAdaptative::donneReponse(const std::string& rep) {
-    if (!aUneQuestion()) {
-        throw out_of_range("Plus de reponse a donner");
-    }
-    
-    d_questionnaire.questions()[d_index]->verifierReponse(rep) ?  d_questionnaire.questions()[d_index]->changeEtat(REPONDUJUSTE) :  d_questionnaire.questions()[d_index]->changeEtat(REPONDUFAUX);
+question& evaluationAdaptative::questionCourante()
+{
+    int idx = d_indices[d_position];
+    return *(questionnaireRef().questions()[idx]);
 }
 
-bool EvaluationAdaptative::peutAfficherBonneReponse() const {
-    return aUneQuestion() && d_questionnaire.questions()[d_index]->etat() != NONREPONDU;
-}
+void evaluationAdaptative::repondre(const std::string& saisie)
+{
+    d_essais++;
 
-void EvaluationAdaptative::questionSuivante() {
-    if (aUneQuestion()) {
-        ++d_index;
+    question& q = questionCourante();
+    if (q.verifierReponse(saisie)) {
+        q.changeEtat(REPONDUJUSTE);
+        d_bonnesReponses++;
+        d_position++;
     } else {
-        throw out_of_range("Plus de questions disponibles.");
+        q.changeEtat(REPONDUFAUX);
+        int idx = d_indices[d_position];
+        d_indices.erase(d_indices.begin() + d_position);
+        d_indices.push_back(idx);
     }
+}
+
+bool evaluationAdaptative::peutAfficherBonneReponse() const
+{
+    return false;
+}
+
+void evaluationAdaptative::questionSuivante()
+{
+    //vide
+}
+
+int evaluationAdaptative::nombreQuestions() const
+{
+    return static_cast<int>(questionnaireRef().questions().size());
+}
+
+int evaluationAdaptative::nombreEssais() const
+{
+    return d_essais;
+}
+
+int evaluationAdaptative::nombreBonnesReponses() const
+{
+    return d_bonnesReponses;
 }

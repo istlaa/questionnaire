@@ -1,29 +1,32 @@
-#ifndef EVALUATION_ADAPTATIVE_H
-#define EVALUATION_ADAPTATIVE_H
+#ifndef EVALUATIONADAPTATIVE_H
+#define EVALUATIONADAPTATIVE_H
 
 #include "evaluation.h"
-#include "questionnaire.h"
-#include <random>
 #include <vector>
 
-class EvaluationAdaptative : public Evaluation {
+class evaluationAdaptative : public evaluation {
 public:
-    EvaluationAdaptative(const questionnaire& q);
-    bool aUneQuestion() const override;
+    explicit evaluationAdaptative(questionnaire& q);
+
+    void commencer() override;
+    bool aEncoreDesQuestions() const override;
     question& questionCourante() override;
-    int score() const override;
-    void changeScore(int nscore) override;
-    bool estFini() const override;
-    vector<question*> questionsFausses() const override;
-    void donneReponse(const std::string& rep) override;
+
+    void repondre(const std::string& saisie) override;
     bool peutAfficherBonneReponse() const override;
     void questionSuivante() override;
 
+    int nombreQuestions() const override;
+    int nombreEssais() const override;
+    int nombreBonnesReponses() const override;
+
 private:
-    bool d_afficherBonneReponse = false;
-    std::mt19937 d_rng;
-    questionnaire d_questionnaire; 
-    size_t d_index = 0;
+    std::vector<int> d_indices;
+    int d_position;
+    int d_essais;
+    int d_bonnesReponses;
 };
 
 #endif
+
+

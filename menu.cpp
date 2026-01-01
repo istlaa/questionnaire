@@ -141,7 +141,6 @@ void menu::lancerApprentissage()
 
 void menu::lancerEvaluation()
 {
-    afficherEnTete("MODE EVALUATION");
 
     int choix = afficherMenuEvaluation();
     std::unique_ptr<evaluation> eval;
@@ -171,7 +170,7 @@ void menu::lancerEvaluation()
         if (eval->estSecondeChance())
         {
             d_afficheur.affiche(
-                "Tu as le droit a une DEUXIEME CHANCE chacal!\n"
+                "Tu as le droit a une DEUXIEME CHANCE!\n"
             );
         }
 
@@ -243,6 +242,8 @@ void menu::lancerEvaluation()
         " / " +
         std::to_string(eval->nombreQuestions()) + "\n"
     );
+
+    d_afficheur.affiche("\nMerci d'avoir participe.\n");
 }
 
 

@@ -308,3 +308,120 @@
 1765966564 c:\users\genis\desktop\cours\projet\questionnaire\apprentissage.h
 	"questionnaire.h"
 
+1767279341 source:c:\users\genis\desktop\projet\questionnaire\afficheurterminal.cpp
+	"afficheurTerminal.h"
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\afficheurterminal.h
+	"afficheur.h"
+	<limits>
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\afficheur.h
+	<string>
+	<iostream>
+
+1767279341 source:c:\users\genis\desktop\projet\questionnaire\main.cpp
+	<iostream>
+	"menu.h"
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\menu.h
+	"questionnaire.h"
+	"afficheur.h"
+	"afficheurTerminal.h"
+	"apprentissage.h"
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\questionnaire.h
+	<vector>
+	"question.h"
+	"questionNumerique.h"
+	"questionTexte.h"
+	"questionChoixMultiples.h"
+	<memory>
+	<fstream>
+
+1767279755 c:\users\genis\desktop\projet\questionnaire\question.h
+	"reponse.h"
+	"afficheur.h"
+	<string>
+	<vector>
+	<iostream>
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\reponse.h
+	<string>
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\questionnumerique.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	"afficheur.h"
+	<iostream>
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\questiontexte.h
+	<string>
+	"question.h"
+	"afficheur.h"
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\questionchoixmultiples.h
+	<string>
+	<vector>
+	"reponse.h"
+	"question.h"
+	"afficheur.h"
+	<iostream>
+
+1767279341 c:\users\genis\desktop\projet\questionnaire\apprentissage.h
+	"questionnaire.h"
+
+1767279341 source:c:\users\genis\desktop\projet\questionnaire\reponse.cpp
+	"reponse.h"
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\menu.cpp
+	<memory>
+	"menu.h"
+	"questionnaire.h"
+	"evaluation.h"
+	"evaluationTest.h"
+	"evaluationSecondeChance.h"
+	"evaluationAdaptative.h"
+
+1767279755 c:\users\genis\desktop\projet\questionnaire\evaluation.h
+	"questionnaire.h"
+	<string>
+
+1767279755 c:\users\genis\desktop\projet\questionnaire\evaluationtest.h
+	"evaluation.h"
+
+1767279755 c:\users\genis\desktop\projet\questionnaire\evaluationsecondechance.h
+	"evaluation.h"
+
+1767279755 c:\users\genis\desktop\projet\questionnaire\evaluationadaptative.h
+	"evaluation.h"
+	<vector>
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\question.cpp
+	"question.h"
+	<vector>
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\questionchoixmultiples.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"questionChoixMultiples.h"
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\questionnaire.cpp
+	"questionnaire.h"
+	<vector>
+	<fstream>
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\questionnumerique.cpp
+	"questionNumerique.h"
+	<vector>
+	<iostream>
+	<fstream>
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\questiontexte.cpp
+	"questionTexte.h"
+	<vector>
+	<iostream>
+	<fstream>
+

@@ -20,6 +20,7 @@ class question{
         string titre() const;
         enum state etat() const;
         void changeEtat(const enum state &nouvelEtat);
+        void reinitialiser();
         virtual bool verifierReponse(string saisie) const = 0;
         virtual void ecrireDansFichier(std::ofstream& fichier)=0;
 

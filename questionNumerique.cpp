@@ -8,14 +8,13 @@ const string questionNumerique::bonneReponse()   const
 {
     return std::to_string(d_reponse);
 }
-
 const int questionNumerique::min() const
 {
-    return d_max;
+    return d_min;
 }
 const int questionNumerique::max() const
 {
-    return d_min;
+    return d_max;
 }
 
 
@@ -27,9 +26,8 @@ bool questionNumerique::verifierReponse(string saisie) const  {
 }
 
 
-
 void questionNumerique::ecrireDansFichier(std::ofstream& fichier){
-    fichier << "N\n";
+    fichier << "NUMERIQUE\n";
     fichier << titre() << "\n";
     fichier << d_reponse << "\n";
     fichier << d_min << "\n";

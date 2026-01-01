@@ -20,6 +20,11 @@ enum state question::etat()  const
     return d_etat;
 }
 
+void question::reinitialiser()
+{
+    d_etat = NONREPONDU;
+}
+
 
 
 

@@ -6,6 +6,8 @@
 class evaluationSecondeChance : public evaluation {
 public:
     explicit evaluationSecondeChance(questionnaire& q);
+    bool estSecondeChance() const override;
+
 
     void commencer() override;
     bool aEncoreDesQuestions() const override;
@@ -28,6 +30,4 @@ private:
 };
 
 #endif
-
-
 

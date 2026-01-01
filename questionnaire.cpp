@@ -8,7 +8,8 @@
 *****************************************************************************************************
 *****************************************************************************************************
 */
-questionnaire::questionnaire(const string &titre):d_titre{titre},d_questions{}
+
+questionnaire::questionnaire(const string &titre):d_questions{}, d_titre{titre}
 {}
 
 
@@ -82,7 +83,7 @@ bool questionnaire::sauvegarder(const string& nomFichier) const
     } else {
         return false;
     }
-    
+
 }
 
 void questionnaire::ajouteQuestion(unique_ptr<question> q)
@@ -98,7 +99,7 @@ void questionnaire::ajouteQuestion(unique_ptr<question> q)
 *****************************************************************************************************
 */
 
-
+//A COMMIT///
 bool questionnaire::chargement(const string &nomFichier)
 {
     ifstream fichier(nomFichier);
@@ -107,9 +108,13 @@ bool questionnaire::chargement(const string &nomFichier)
         return false;
     string type;
     string question;
+
     while(getline(fichier, type))
     {
+        if (type.empty())
+            continue;
         getline(fichier, question);
+
         if(type == "TEXTE")
         {
             string reponse;

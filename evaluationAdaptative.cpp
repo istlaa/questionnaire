@@ -8,13 +8,16 @@ evaluationAdaptative::evaluationAdaptative(questionnaire& q)
 
 void evaluationAdaptative::commencer()
 {
-    int n = static_cast<int>(questionnaireRef().questions().size());
+    int n = questionnaireRef().questions().size();
 
-    d_indices.resize(n);
+    d_indices.clear();
     for (int i = 0; i < n; ++i)
-        d_indices[i] = i;
+        d_indices.push_back(i);
 
-    std::random_shuffle(d_indices.begin(), d_indices.end());
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+
+    std::shuffle(d_indices.begin(), d_indices.end(), gen);
 
     d_position = 0;
     d_essais = 0;
@@ -24,31 +27,38 @@ void evaluationAdaptative::commencer()
 
 bool evaluationAdaptative::aEncoreDesQuestions() const
 {
-    return d_position < static_cast<int>(d_indices.size());
+    return !d_indices.empty();
 }
+
 
 question& evaluationAdaptative::questionCourante()
 {
-    int idx = d_indices[d_position];
+    int idx = d_indices.front();
     return *(questionnaireRef().questions()[idx]);
 }
+
 
 void evaluationAdaptative::repondre(const std::string& saisie)
 {
     d_essais++;
 
-    question& q = questionCourante();
-    if (q.verifierReponse(saisie)) {
+    int idx = d_indices.front();
+    question& q = *(questionnaireRef().questions()[idx]);
+
+    if (q.verifierReponse(saisie))
+    {
         q.changeEtat(REPONDUJUSTE);
         d_bonnesReponses++;
-        d_position++;
-    } else {
+        d_indices.erase(d_indices.begin());
+    }
+    else
+    {
         q.changeEtat(REPONDUFAUX);
-        int idx = d_indices[d_position];
-        d_indices.erase(d_indices.begin() + d_position);
+        d_indices.erase(d_indices.begin());
         d_indices.push_back(idx);
     }
 }
+
 
 bool evaluationAdaptative::peutAfficherBonneReponse() const
 {

@@ -6,6 +6,11 @@ evaluationTest::evaluationTest(questionnaire& q)
 
 void evaluationTest::commencer()
 {
+    for (auto& q : questionnaireRef().questions())
+    {
+        q->reinitialiser();
+    }
+
     d_index = 0;
     d_essais = 0;
     d_bonnesReponses = 0;
@@ -32,7 +37,10 @@ void evaluationTest::repondre(const std::string& saisie)
     } else {
         q.changeEtat(REPONDUFAUX);
     }
+
+    d_index++;
 }
+
 
 bool evaluationTest::peutAfficherBonneReponse() const
 {
@@ -41,7 +49,7 @@ bool evaluationTest::peutAfficherBonneReponse() const
 
 void evaluationTest::questionSuivante()
 {
-    d_index++;
+    //vide
 }
 
 int evaluationTest::nombreQuestions() const

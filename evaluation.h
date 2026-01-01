@@ -8,6 +8,8 @@ class evaluation {
 public:
     explicit evaluation(questionnaire& q);
     virtual ~evaluation() = default;
+    virtual bool estSecondeChance() const { return false; }
+
 
     virtual void commencer() = 0;
     virtual bool aEncoreDesQuestions() const = 0;

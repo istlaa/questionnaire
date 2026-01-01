@@ -1,6 +1,11 @@
+#include <memory>
 #include "menu.h"
-#include <iostream>
 #include "questionnaire.h"
+#include "evaluation.h"
+#include "evaluationTest.h"
+#include "evaluationSecondeChance.h"
+#include "evaluationAdaptative.h"
+
 
 using std::cout;
 using std::cin;
@@ -114,6 +119,18 @@ void menu::chargerQuestionnaire()
 }
 
 
+int menu::afficherMenuEvaluation()
+{
+    afficherEnTete("MENU EVALUATION");
+    d_afficheur.affiche("1. Evaluation test\n");
+    d_afficheur.affiche("2. Evaluation seconde chance\n");
+    d_afficheur.affiche("3. Evaluation adaptative\n");
+    d_afficheur.affiche("Votre choix : ");
+    return d_afficheur.demanderInt();
+}
+
+
+
 void menu::lancerApprentissage()
 {
     afficherEnTete("MODE APPRENTISSAGE");
@@ -121,7 +138,114 @@ void menu::lancerApprentissage()
     a.commencer(d_afficheur);
 
 }
+
 void menu::lancerEvaluation()
 {
+    afficherEnTete("MODE EVALUATION");
 
+    int choix = afficherMenuEvaluation();
+    std::unique_ptr<evaluation> eval;
+
+    switch (choix)
+    {
+        case 1:
+            eval = std::make_unique<evaluationTest>(d_questionnaire);
+            break;
+        case 2:
+            eval = std::make_unique<evaluationSecondeChance>(d_questionnaire);
+            break;
+        case 3:
+            eval = std::make_unique<evaluationAdaptative>(d_questionnaire);
+            break;
+        default:
+            choixInvalide();
+            return;
+    }
+
+    eval->commencer();
+
+    while (eval->aEncoreDesQuestions())
+    {
+        question& q = eval->questionCourante();
+
+        if (eval->estSecondeChance())
+        {
+            d_afficheur.affiche(
+                "Tu as le droit a une DEUXIEME CHANCE chacal!\n"
+            );
+        }
+
+        d_afficheur.affiche("\nQuestion :\n");
+        d_afficheur.affiche(q.titre() + "\n");
+
+        if (auto* qcm = dynamic_cast<questionChoixMultiples*>(&q))
+        {
+            int i = 1;
+            for (const auto& r : qcm->reponses())
+            {
+                d_afficheur.affiche(
+                    std::to_string(i) + ". " + r.nom() + "\n"
+                );
+                i++;
+            }
+
+            d_afficheur.affiche("Votre choix (numero) : ");
+            int choixUtilisateur = d_afficheur.demanderInt();
+            qcm->selectionReponse(choixUtilisateur - 1);
+
+            eval->repondre("");
+        }
+        else
+        {
+            d_afficheur.affiche("Votre reponse : ");
+            std::string saisie = d_afficheur.demanderString();
+            eval->repondre(saisie);
+        }
+
+        if (q.etat() == REPONDUJUSTE)
+        {
+            d_afficheur.affiche("Bonne reponse\n");
+        }
+        else
+        {
+            d_afficheur.affiche("Mauvaise reponse\n");
+            if (eval->peutAfficherBonneReponse())
+            {
+                d_afficheur.affiche(
+                    "Bonne reponse : " + q.bonneReponse() + "\n"
+                );
+            }
+        }
+
+        if (q.etat() != NONREPONDU)
+        {
+            eval->questionSuivante();
+        }
+    }
+
+    afficherEnTete("RESULTATS");
+
+    d_afficheur.affiche(
+        "Nombre de questions : " +
+        std::to_string(eval->nombreQuestions()) + "\n"
+    );
+    d_afficheur.affiche(
+        "Nombre d'essais     : " +
+        std::to_string(eval->nombreEssais()) + "\n"
+    );
+    d_afficheur.affiche(
+        "Bonnes reponses     : " +
+        std::to_string(eval->nombreBonnesReponses()) + "\n"
+    );
+    d_afficheur.affiche(
+        "Score               : " +
+        std::to_string(eval->nombreBonnesReponses()) +
+        " / " +
+        std::to_string(eval->nombreQuestions()) + "\n"
+    );
 }
+
+
+
+
+

@@ -7,8 +7,10 @@ questionChoixMultiples::questionChoixMultiples(const std::string &titre,const st
 
 void questionChoixMultiples::selectionReponse(int i)
 {
+    for (auto& r : d_reponses) r.changeSelection(false);
     d_reponses[i].changeSelection(true);
 }
+
 
 const std::vector<reponse> questionChoixMultiples::reponses() const
 {
@@ -42,9 +44,8 @@ bool questionChoixMultiples::verifierReponse(string /* saisie */) const
 
 
 
-
 void questionChoixMultiples::ecrireDansFichier(std::ofstream& fichier){
-    fichier << "Q\n";
+    fichier << "QCM\n";
     fichier << titre() << "\n";
     fichier << d_reponses.size() << "\n";
     for(const auto &r:d_reponses)

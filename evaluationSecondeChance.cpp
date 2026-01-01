@@ -9,8 +9,19 @@ evaluationSecondeChance::evaluationSecondeChance(questionnaire& q)
       d_afficherBonneReponse(false)
 {}
 
+bool evaluationSecondeChance::estSecondeChance() const
+{
+    return d_dejaReposee;
+}
+
+
 void evaluationSecondeChance::commencer()
 {
+    for (auto& q : questionnaireRef().questions())
+    {
+        q->reinitialiser();
+    }
+
     d_index = 0;
     d_essais = 0;
     d_bonnesReponses = 0;

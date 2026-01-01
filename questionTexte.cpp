@@ -19,9 +19,8 @@ bool questionTexte::verifierReponse(string saisie) const {
     return saisie == d_bonneReponse;
 }
 
-
 void questionTexte::ecrireDansFichier(std::ofstream& fichier){
-    fichier << "T\n";
+    fichier << "TEXTE\n";
     fichier << titre() << "\n";
     fichier << d_bonneReponse << "\n";
 }

@@ -33,13 +33,13 @@ int choix;
     //Premier choix
     do {
 
-        choix = lancerMenuDepart();
+        choix = lancerChoixMenuDepart();
 
         switch (choix) {
-        case PREMIER:
+        case 1:
             chargerQuestionnaire();
             break;
-        case DEUXIEME:
+        case 2:
             choixQuitter();
             return;
         default:
@@ -50,16 +50,16 @@ int choix;
 
     do {
 
-        choix = lancerMenuPrincipal();
+        choix = lancerChoixMenuPrincipal();
 
         switch (choix) {
-        case PREMIER:
+        case 1:
             lancerApprentissage();
             break;
-        case DEUXIEME:
+        case 2:
             lancerEvaluation();
             break;
-        case TROISIEME:
+        case 3:
             choixQuitter();
             break;
         default:
@@ -67,28 +67,28 @@ int choix;
             break;
         }
 
-    } while (choix != TROISIEME);
+    } while (choix != 3);
 }
-void menu::afficherEnTete(const string& entete)
+void menu::afficherEnTete(const string& entete) const
 {
     d_afficheur.affiche("\n===== "+entete+" =====\n");
 }
 
-int menu::lancerMenuDepart()
+int menu::lancerChoixMenuDepart() const
 {
         afficherEnTete("MENU PRINCIPAL");
-        d_afficheur.affiche(to_string(PREMIER)+". Charger un questionnaire\n");
-        d_afficheur.affiche(to_string(DEUXIEME)+". Quitter\n");
+        d_afficheur.affiche("1. Charger un questionnaire\n");
+        d_afficheur.affiche("2. Quitter\n");
         d_afficheur.affiche("Votre choix : ");
         int choix = d_afficheur.demanderInt();
         return choix;
 }
 
-int menu::lancerMenuPrincipal() {
+int menu::lancerChoixMenuPrincipal() const {
     afficherEnTete("MENU PRINCIPAL");
-    d_afficheur.affiche(to_string(PREMIER)+". Mode apprentissage\n");
-    d_afficheur.affiche(to_string(DEUXIEME)+". Mode evaluation\n");
-    d_afficheur.affiche(to_string(TROISIEME)+". Quitter\n");
+    d_afficheur.affiche("1. Mode apprentissage\n");
+    d_afficheur.affiche("2. Mode evaluation\n");
+    d_afficheur.affiche("3. Quitter\n");
     d_afficheur.affiche("Votre choix : ");
     int choix = d_afficheur.demanderInt();
         return choix;
@@ -119,7 +119,7 @@ void menu::chargerQuestionnaire()
 }
 
 
-int menu::afficherMenuEvaluation()
+int menu::lancerChoixMenuEvaluation() const
 {
     afficherEnTete("MENU EVALUATION");
     d_afficheur.affiche("1. Evaluation test\n");
@@ -142,7 +142,7 @@ void menu::lancerApprentissage()
 void menu::lancerEvaluation()
 {
 
-    int choix = afficherMenuEvaluation();
+    int choix = lancerChoixMenuEvaluation();
     std::unique_ptr<evaluation> eval;
 
     switch (choix)

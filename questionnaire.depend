@@ -323,7 +323,7 @@
 	<iostream>
 	"menu.h"
 
-1767279341 c:\users\genis\desktop\projet\questionnaire\menu.h
+1767283604 c:\users\genis\desktop\projet\questionnaire\menu.h
 	"questionnaire.h"
 	"afficheur.h"
 	"afficheurTerminal.h"
@@ -375,7 +375,7 @@
 1767279341 source:c:\users\genis\desktop\projet\questionnaire\reponse.cpp
 	"reponse.h"
 
-1767279755 source:c:\users\genis\desktop\projet\questionnaire\menu.cpp
+1767283091 source:c:\users\genis\desktop\projet\questionnaire\menu.cpp
 	<memory>
 	"menu.h"
 	"questionnaire.h"
@@ -424,4 +424,23 @@
 	<vector>
 	<iostream>
 	<fstream>
+
+1767279341 source:c:\users\genis\desktop\projet\questionnaire\apprentissage.cpp
+	"apprentissage.h"
+	"question.h"
+	<iostream>
+
+1767279341 source:c:\users\genis\desktop\projet\questionnaire\evaluation.cpp
+	"evaluation.h"
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\evaluationadaptative.cpp
+	"evaluationAdaptative.h"
+	<algorithm>
+	<random>
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\evaluationsecondechance.cpp
+	"evaluationSecondeChance.h"
+
+1767279755 source:c:\users\genis\desktop\projet\questionnaire\evaluationtest.cpp
+	"evaluationTest.h"
 

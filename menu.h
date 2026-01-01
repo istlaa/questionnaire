@@ -16,29 +16,25 @@ public:
 
     void executionProgramme();
 
-    // Affichages
-    int lancerMenuDepart();
-    int lancerMenuPrincipal();
-    int afficherMenuEvaluation();
-    void afficherEnTete(const string& entete);
-    void choixInvalide();
-    void choixQuitter();
-
-    void chargerQuestionnaire();
-    void lancerApprentissage();
-    void lancerEvaluation();
-
-    const string recupererNomFichier()const;
-    bool questionnaireEstCharge() const;
-
 
 private:
+    string recupererNomFichier()const;
+    bool questionnaireEstCharge() const;
     afficheur& d_afficheur;
     bool d_questionnaireCharge;
     questionnaire d_questionnaire;
-    static constexpr int PREMIER {1};
-    static constexpr int DEUXIEME {2};
-    static constexpr int TROISIEME {3};
+
+     // Affichages
+
+    int lancerChoixMenuDepart() const;
+    void chargerQuestionnaire();
+    void lancerApprentissage();
+    void lancerEvaluation();
+    int lancerChoixMenuPrincipal() const;
+    int lancerChoixMenuEvaluation() const;
+    void afficherEnTete(const string& entete) const;
+    void choixInvalide();
+    void choixQuitter();
 
 
 };
